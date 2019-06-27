@@ -4,7 +4,7 @@ const Videos = () =>{
     return(
         <>
             <div className="video-section">
-                <h2 className="playfair-xlg">Video</h2>
+                <h2 className="playfair-lg">Video</h2>
 
                 <div className="videoContainer">
 
@@ -18,7 +18,7 @@ const Music = () =>{
     return(
         <>
             <div className="music-section">
-                <h2 className="playfair-xlg">Music</h2>
+                <h2 className="playfair-lg">Music</h2>
 
                 <div className="musicContainer">
                     

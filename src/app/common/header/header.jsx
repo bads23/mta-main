@@ -7,16 +7,16 @@ const LeftHeader = () => {
     <div id="left-header" className="header-sides">
       <div className="top fl-btw mg-v-20">
         <span className="playfair-links">
-          <a href="/login">Music</a>
+          <a href="/Music">Music</a>
         </span>
         <span className="playfair-links">
-          <a href="/register">Sports</a>
+          <a href="/Sports">Sports</a>
         </span>
         <span className="playfair-links">
-          <a href="/register">Entertainers</a>
+          <a href="/Entertainers">Entertainers</a>
         </span>
         <span className="playfair-links">
-          <a href="/register">Events</a>
+          <a href="/Events">Events</a>
         </span>
       </div>
       <hr />
@@ -30,13 +30,16 @@ const RightHeader = () => {
     <div id="right-header" className="header-sides">
       <div className="top fl-btw mg-v-20">
         <span className="playfair-links">
-          <a href="/login">News</a>
+          <a href="/News">News</a>
         </span>
         <span className="playfair-links">
-          <a href="/login">About Us</a>
+          <a href="/About-us">About Us</a>
         </span>
         <span className="playfair-links">
-          <a href="/register">Shop</a>
+          <a href="/Contact-us">Contact Us</a>
+        </span>
+        <span className="playfair-links">
+          <a href="/Shop">Shop</a>
         </span>
       </div>
       <hr />

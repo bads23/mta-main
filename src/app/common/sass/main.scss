@@ -9,7 +9,7 @@
 @import '../buttons/buttons.scss';
 @import '../header/header.scss';
 @import '../slider/styles.scss';
-@import '../../components/home/styles.scss';
+@import '../../home/styles.scss';
 
 
 /* GENERAL STYLING */
@@ -27,6 +27,14 @@ a{
 
 .block{
   display: block;
+}
+
+.absolute{
+  position: absolute;
+}
+
+.relative{
+  position: relative;
 }
 
 #wrapper{
@@ -55,4 +63,13 @@ a{
   @extend .centered, .mg-v-50 ;
   max-width: 1400px;
 
+}
+
+.MidSection{
+  // background-color: $color-cream;
+  height: 500px;
+  width: 100%;
+  top: 150px;
+  max-width: 1400px;
+  @extend .centered-section ;
 }

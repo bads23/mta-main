@@ -1,16 +1,17 @@
 import React from 'react';
-import Header from './app/common/header/header'
-import Slider from './app/common/slider/sliderComponent'
-import Media from './app/components/home/media'
-import Clientele from './app/components/home/clients'
+import {BrowserRouter as Router, Route} from 'react-router-dom'
+
+import Home from './app/home'
+import Music from './app/music';
 
 function App() {
   return (
     <>
-      <Header />
-      <Slider />
-      <Media />
-      <Clientele />
+      <Router>
+        <Route exact path="/" component={Home} /> 
+        <Route path="/Music" component={Music} />
+      </Router>
+      
     </>
   );
 }
