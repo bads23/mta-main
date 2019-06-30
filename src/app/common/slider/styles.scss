@@ -9,7 +9,7 @@
 }
 
 .slider{
-  background-color: #ccc;
+  background-color: $color-cream;
   max-height: 700px ;
   position: relative;
   &::before{

@@ -1,9 +1,11 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Link} from 'react-router-dom'
 
+
 import Header from '../common/header/header'
 import pic from '../common/assets/img/ac.png'
 
+import Bio from './bio'
 
 const Client = () =>{
     return (
@@ -16,14 +18,6 @@ const Client = () =>{
                 </div>
             </div>
         </Link>
-    )
-}
-
-const BioDP = () =>{
-    return(
-        <>
-        
-        </>
     )
 }
 
@@ -56,7 +50,7 @@ const Music = () => {
                     path="/Music/:id"
                     render={() => (
                         <>
-                            <h3>Test</h3>
+                            <Bio/>
                         </>
                     )}
                 />

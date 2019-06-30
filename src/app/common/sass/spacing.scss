@@ -16,6 +16,13 @@
   box-sizing: border-box;
 }
 
+.mg-0{
+  margin: 0px;
+}
+
+.pd-0{
+  padding: 0px;
+}
 
 .mg-t-10{
   @include margin-top(10px);

@@ -39,7 +39,7 @@ const RightHeader = () => {
           <a href="/Contact-us">Contact Us</a>
         </span>
         <span className="playfair-links">
-          <a href="/Shop">Shop</a>
+          <a href="#">Shop</a>
         </span>
       </div>
       <hr />

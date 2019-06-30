@@ -10,6 +10,8 @@
 @import '../header/header.scss';
 @import '../slider/styles.scss';
 @import '../../home/styles.scss';
+@import '../../music/styles.scss';
+@import '../../about/styles.scss';
 
 
 /* GENERAL STYLING */
@@ -66,10 +68,11 @@ a{
 }
 
 .MidSection{
-  // background-color: $color-cream;
-  height: 500px;
+
   width: 100%;
+  position: relative;
   top: 150px;
   max-width: 1400px;
   @extend .centered-section ;
+  @include padding(20px);
 }
