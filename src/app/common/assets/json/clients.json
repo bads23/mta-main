@@ -1,22 +1,27 @@
 [
     {
         "client": "2 Testifayaz",
-        "type": "Band"
-    },
-    {
-        "client": "Medi",
-        "type": "Artist"
+        "type": "Band",
+        "avatar": "https://i1.sndcdn.com/avatars-000332050965-myjo7w-t500x500.jpg"
     },
     {
         "client": "Big Epz",
-        "type": "Artist"
+        "type": "Artist",
+        "avatar": "http://media.motiontalentafrica.co.ke/media/avatars/bigepz.jpg"
     },
     {
         "client": "Destiny Afrique",
-        "type": "Band"
+        "type": "Band",
+        "avatar": ""
     },
     {
         "client": "Lixel Rols",
-        "type": "Artist"
+        "type": "Artist",
+        "avatar": "https://i1.sndcdn.com/avatars-000493946715-6177ku-t500x500.jpg"
+    },
+    {
+        "client": "Medi",
+        "type": "Artist",
+        "avatar": "https://i1.sndcdn.com/avatars-000493946715-6177ku-t500x500.jpg"
     }
 ]

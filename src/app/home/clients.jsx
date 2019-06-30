@@ -8,7 +8,7 @@ const Client = ({obj}) =>{
     return (
         <Link to={`/music/${obj.client}`}>
             <div className="client relative">
-                <img src={pic} alt=""/>
+                <img src={obj.avatar} alt=""/>
                 <div className="absolute h-center">
                     <span className="block playfair-m gold">{obj.client}</span>
                     <span className="block playfair-sm">{obj.type}</span>

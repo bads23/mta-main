@@ -1,0 +1,18 @@
+[
+    {
+        "name": "Acoustic Guitar",
+        "photo": "ac.png"
+    },
+    {
+        "name": "Saxophone",
+        "photo": "saxo.png"
+    },
+    {
+        "name": "Bass Guitar",
+        "photo": "bass.png"
+    },
+    {
+        "name": "Guitar Pick",
+        "photo": "pick.png"
+    }
+]

@@ -39,4 +39,20 @@
     }
 }
 
+.big-client{
+    @extend .client ;
+    width: 100%;
+    height: 560px;
+}
+
 // SHOP SECTION
+
+#item-catalogue{
+    #big-item{
+        width: 45%;
+    }
+
+    #small-items{
+        width: 45%;
+    }
+}   

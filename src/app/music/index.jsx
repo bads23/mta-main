@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Link} from 'react-router-dom'
-
+import NoContent from '../common/404content'
 
 import Header from '../common/header/header'
 import pic from '../common/assets/img/ac.png'
@@ -21,6 +21,18 @@ const Client = () =>{
     )
 }
 
+
+const Index = () => {
+    return(
+        <>
+            <Header />
+            <div className="MidSection">
+                <NoContent />
+            </div>
+            
+        </>
+    )
+}
 
 const Music = () => {
     return(
@@ -60,4 +72,4 @@ const Music = () => {
     )
 }
 
-export default Music
+export default Index

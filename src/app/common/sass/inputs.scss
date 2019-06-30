@@ -1,10 +1,10 @@
 .input1{
   width: 100%;
-  @extend .mg-v-20 ;
+  @extend .mg-v-50 ;
   label{
       display: block;
       @extend .lato-m, .b ;
-      @extend .mg-v-10 ;
+      @include margin(10px) ;
   }
   input, select, textarea{
       width: 100%;
@@ -12,12 +12,16 @@
       box-sizing: border-box;
       background: none;
       border: none;
-      border-bottom: 1px solid $light-grey ;
+      border: 1px solid $light-grey ;
       @extend .lato-m ;
+      &:focus{
+        border: 1px solid $color-gold ;
+      }
   }  
   textarea{
     max-width: 100%;
     min-width: 100%;
+    min-height: 200px;
   }
   #checkbox{
     width: 20px;
