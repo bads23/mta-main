@@ -6,18 +6,33 @@
     width: 644px;
     height: 362px;
     background-color: #000;
+    iframe{
+        width: 100%;
+        height: 100%;
+    }
 }
-
-
 
 .music-section{
     width: calc(100% - 694px);
+    min-width: 300px;
 }
 
 .musicContainer{
     background-color: $color-cream;
     width: 100%;
     height: 362px;
+}
+
+@media(max-width: 768px){
+    .video-section, .videoContainer{
+        width: 100%;
+    }
+}
+
+@media(max-width: 1080px){
+    .music-section{
+        width: 100%;
+    }
 }
 
 

@@ -62,6 +62,11 @@
 .pd-20 {
   @include padding(20px)
 }
+
+.pd-50 {
+  @include padding(50px)
+}
+
 /*  FLEX BOX STYLING */
 
 .flex{

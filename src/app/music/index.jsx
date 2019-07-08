@@ -1,20 +1,24 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import { BrowserRouter as Router, Route, Link} from 'react-router-dom'
 import NoContent from '../common/404content'
+
+import ApiGet from '../config/axios'
+import URLS from '../config/settings'
 
 import Header from '../common/header/header'
 import pic from '../common/assets/img/ac.png'
 
 import Bio from './bio'
+import ClientData from '../common/assets/json/clients.json'
 
-const Client = () =>{
+const Client = ({obj}) =>{
     return (
-        <Link to="/Music/3">
+        <Link to={`/Music/${obj.id}`}>
             <div className="client relative mg-v-20">
-                <img src={pic} alt=""/>
+                <img src={obj.avatar} alt=""/>
                 <div className="absolute h-center">
-                    <span className="block playfair-m gold">2 Testifayaz</span>
-                    <span className="block playfair-sm">Band</span>
+                    <span className="block playfair-m gold">{obj.name}</span>
+                    <span className="block playfair-sm">{obj.type}</span>
                 </div>
             </div>
         </Link>
@@ -34,7 +38,21 @@ const Index = () => {
     )
 }
 
-const Music = () => {
+const Music = ({props}) => {
+
+    const [clients, setClients] = useState([])
+
+    const getClients = (id) =>{
+        ApiGet(`${URLS().CLIENTS}`)
+        .then(res=>{
+            setClients(res.data)
+        })
+    }
+    
+    useEffect(() => {
+        getClients()
+    }, )
+
     return(
         <Router>
             
@@ -47,10 +65,11 @@ const Music = () => {
                         <>
                             <h2 className="playfair-xlg gold align-center">Music</h2>
                             <div className="fl-btw fl-wrap">
-                                <Client/>
-                                <Client/>
-                                <Client/>
-                                <Client/>
+                                {
+                                    clients.map(data=>(
+                                        <Client obj={data} />
+                                    ))
+                                }
                                 
                         </div>
                         </>
@@ -60,9 +79,9 @@ const Music = () => {
                 <Route
                     exact
                     path="/Music/:id"
-                    render={() => (
-                        <>
-                            <Bio/>
+                    render={(props) => (
+                        <>  
+                            <Bio props={props} client={clients} />
                         </>
                     )}
                 />
@@ -71,5 +90,5 @@ const Music = () => {
         </Router>
     )
 }
-
-export default Index
+ 
+export default Music

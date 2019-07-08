@@ -1,4 +1,7 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
+
+import ApiGet from '../config/axios'
+import URLS from '../config/settings'
 
 
 const BioImages = () =>{
@@ -48,11 +51,25 @@ const BioText = () =>{
     )
 }
 
-const Bio = () =>{
+const Bio = ({props}) =>{
+
+    const [client, setClient] = useState([])
+    
+    const getClient = () =>{
+        ApiGet(`${URLS().CLIENTS}${props.match.params.id}`)
+        .then(res=>{
+            setClient(res.data)
+        })
+    }
+    
+    useEffect(() => {
+        getClient()
+    })
+
     return(
         <>
             <div className="fl-btw">
-                <BioImages/>
+                <BioImages />
                 <BioText />
             </div>
         </>

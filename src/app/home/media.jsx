@@ -10,7 +10,6 @@ const Videos = () =>{
 
                 <div className="videoContainer">
                 <iframe 
-                    width="644" height="362" 
                     src={mediaLinks.youtube} 
                     frameBorder="0" allow="autoplay; encrypted-media" allowFullScreen></iframe>
                 </div>
@@ -39,7 +38,7 @@ const Music = () =>{
 
 const Media = () =>{
     return(
-        <div className="centered-section fl-btw">
+        <div className="centered-section fl-btw fl-wrap pd-50">
             <Videos/>
             <Music />
         </div>

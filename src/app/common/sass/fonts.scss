@@ -146,10 +146,19 @@
 }
 
 
+.icon{
+  &:hover{
+    color: $color-gold;
+    cursor: pointer;
+  }
+}
+
 // Fontawesome icons
 .fas{
   @extend .medium-text ;
 }
+
+
 
 .align-right{
   text-align: right;

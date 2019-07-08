@@ -31,9 +31,9 @@ const BigItem = () =>{
 
 const Shop = () =>{
     return(
-        <div className="centered-section mg-v-50">
+        <div className="centered-section mg-v-50 pd-50">
             <h2 className="playfair-lg">Shop (Coming Soon)</h2>
-            <div className="fl-btw" id="item-catalogue">
+            <div className="fl-btw fl-wrap" id="item-catalogue">
                 <div id="big-item">
                     <BigItem />
                 </div>
