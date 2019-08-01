@@ -1,7 +1,11 @@
 .sliderBtns{
-  position: absolute ;
-  @extend .fontawesome, .b, .v-center, .xlg-text ;
-
+  position: absolute;
+  @extend .fontawesome, .b, .xlg-text ;
+  width: 50px;
+  height: 50px;
+  color: #fff;
+  z-index: 9999;
+  top: 50%;
   &:hover{
     color: $color-gold;
     cursor: pointer;
@@ -9,19 +13,49 @@
 }
 
 .slider{
-  background-color: $color-cream;
+  background-color: rgba(0,0,0,1);
   max-height: 700px ;
-  position: relative;
-  &::before{
-    content: '\f104';
-    @extend .sliderBtns ;
-    left: 50px ;
+  position: relative ;
+  overflow: hidden;
+  width: 100%;
+  #slideprev{
+    &::before{
+      content: '\f104';
+      @extend .sliderBtns ;
+      left: 30px;
+    }
   }
 
-  &::after{
-    content: '\f105';
-    @extend .sliderBtns ;
-    right: 50px ;
+  #slidenext{
+    right: 0px !important;
+    display: block;
+    &::before{
+      content: '\f105';
+      @extend .sliderBtns ;
+      right: 30px;
+    }
+  }
+
+  .slides{
+    width: 100vw;
+    max-height: 700px;
+    overflow: hidden;
+    display: inline-block;
+    position: relative;
+    img{
+      width: 100%;
+      opacity: .6;
+    }
+    .caption{
+      width: 50vw;
+      color: white;
+      position: absolute;
+      left: 150px;
+      @extend .playfair-lg, .v-center ;
+      h1{
+        text-shadow: 1px 1px 2px #000;
+      }
+    }
   }
 }
 
@@ -29,4 +63,33 @@
   top: 0px;
   width: 100%;
   height: 100vh;
+}
+
+#sliderWrap{
+  position: absolute;
+  width: 300%;
+  overflow: hidden;
+  left: 0%;
+  transition: .3s ease-in-out all;
+}
+
+@media screen and (max-width: 600px){
+  .slides{
+    height: 100vh;
+    img{
+      width: auto !important;
+      height: 100vh;
+      margin: 0px auto;
+    }
+
+    .caption{
+      width: 80vw;
+      left: 20px;
+      // bottom: 0px !important;
+      h1{
+        font-size: 18px !important;
+        text-align: align-center !important;
+      }
+    }
+  }
 }

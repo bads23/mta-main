@@ -4,8 +4,11 @@
 
 #bioImgWrap{
     width: 485px;
-    height: 485px;
     background-color: $color-cream;
+
+    img{
+        width: 100%;
+    }
 }
 
 .socials i{

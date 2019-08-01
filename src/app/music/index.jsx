@@ -15,7 +15,7 @@ const Client = ({obj}) =>{
     return (
         <Link to={`/Music/${obj.id}`}>
             <div className="client relative mg-v-20">
-                <img src={obj.avatar} alt=""/>
+                <img src={`http://media.motiontalentafrica.co.ke/media/avatars/${obj.profile_photo}`} alt=""/>
                 <div className="absolute h-center">
                     <span className="block playfair-m gold">{obj.name}</span>
                     <span className="block playfair-sm">{obj.type}</span>
@@ -31,7 +31,7 @@ const Index = () => {
         <>
             <Header />
             <div className="MidSection">
-                <NoContent />
+                <Music />
             </div>
             
         </>
@@ -51,12 +51,10 @@ const Music = ({props}) => {
     
     useEffect(() => {
         getClients()
-    }, )
+    },[])
 
     return(
         <Router>
-            
-            <Header />
             <section className="MidSection relative">
                 <Route
                     exact
@@ -91,4 +89,4 @@ const Music = ({props}) => {
     )
 }
  
-export default Music
+export default Index

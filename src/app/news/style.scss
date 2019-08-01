@@ -1,0 +1,30 @@
+.articleItem{
+    .articleItemImg{
+        width: 48%;
+        background-color: $color-cream;
+        border: 1px solid $color-gold;
+        max-height: 300px;
+        overflow: hidden;
+        img{
+            width: 100%;
+        }
+    }
+    .articleItemInfo{
+        width: 50%;
+    }
+}
+
+.articleImg{
+    background-color: $color-cream;
+    border: 1px solid $color-gold;
+    overflow: hidden;
+    max-height: 600px;
+    img{
+        width: 100%;
+    }
+}
+
+.article{
+    width: 80%;
+    margin: 0px auto;
+}

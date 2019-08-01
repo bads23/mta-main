@@ -11,7 +11,7 @@ const About = () =>{
         <>  
             <h1 className="playfair-xxlg align-center gold">About Motion Talent Africa</h1>
             <p className="long-text">
-            Motion Talent Africa is a talent management and events planning company. Since its founding in 2016, Motion Talent Africa has grown into a preeminent
+            We are a talent management and events planning company. Since its founding in 2016, Motion Talent Africa has grown into a preeminent
 entertainment company providing different entertainment packages for different organisations and talent management services. We work in every aspect of
 
 modern entertainment- with recording artists and producers, live bands, djs, writers and athletes/ sports personnel. We are a full service organization,

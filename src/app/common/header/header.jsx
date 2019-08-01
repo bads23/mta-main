@@ -39,7 +39,7 @@ const RightHeader = () => {
           <a href="/Contact-us">Contact Us</a>
         </span>
         <span className="playfair-links">
-          <a href="#">Shop</a>
+          <a href="http://store.motiontalentafrica.co.ke" target="_blank">Shop</a>
         </span>
       </div>
       <hr />
@@ -63,7 +63,7 @@ const Mobile = () => {
   return(
     <>
       <span id="mobileMenu" onClick={openMenu}>
-        <i className="fas fa-bars lg-text icon"></i>
+        <i className="fas fa-bars lg-text icon gold"></i>
       </span>
 
       <div id="mobileMenuBar">
@@ -93,7 +93,7 @@ const Mobile = () => {
           <a href="/contact-us">
             <span>Contact us</span>
           </a>
-          <a href="#">
+          <a href="https://store.motiontalentafrica.co.ke" target="_blank">
             <span>Shop</span>
           </a>
         </div>

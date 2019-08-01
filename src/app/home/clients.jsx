@@ -9,15 +9,15 @@ import ClientData from '../common/assets/json/clients.json';
 
 const Client = ({obj}) =>{
     return (
-        <Link to={`/music/${obj.id}`}>
+        <a href={`/music/${obj.id}`}>
             <div className="client relative mg-v-20">
-                <img src="" alt=""/>
+                <img src={`https://media.motiontalentafrica.co.ke/media/avatars/${obj.profile_photo}`} alt=""/>
                 <div className="absolute h-center">
                     <span className="block playfair-m gold">{obj.name}</span>
-                    <span className="block playfair-sm"></span>
+                    <span className="block playfair-sm">{obj.category}</span>
                 </div>
             </div>
-        </Link>
+        </a>
     )
 }
 
@@ -36,7 +36,7 @@ const Clientele = () =>{
     
     useEffect(() => {
         getClients()
-    })
+    },[])
 
     return(
         <div className="centered-section mg-v-50 pd-50">

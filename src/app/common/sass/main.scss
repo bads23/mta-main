@@ -12,7 +12,7 @@
 @import '../../home/styles.scss';
 @import '../../music/styles.scss';
 @import '../../about/styles.scss';
-
+@import '../../news/style.scss';
 
 /* GENERAL STYLING */
 
@@ -68,10 +68,9 @@ a{
 }
 
 .MidSection{
-
   width: 100%;
   position: relative;
-  top: 150px;
+  top: 0px;
   max-width: 1400px;
   @extend .centered-section ;
   @include padding(20px);
