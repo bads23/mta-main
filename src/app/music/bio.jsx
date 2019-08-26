@@ -13,7 +13,7 @@ const BioImages = ({data}) =>{
                 </div>
                 <div>
                     <h2 className="gold playfair-lg mg-0">{data.name}</h2>
-                    <span className="lato">{data.category}</span>
+                    <span className="lato">{data.tag}</span>
                     <span className="socials mg-v-50 block">
                         <i className="fab fa-facebook"></i>
                         <i className="fab fa-youtube"></i>

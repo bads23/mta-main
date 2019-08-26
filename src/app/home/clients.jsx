@@ -14,7 +14,7 @@ const Client = ({obj}) =>{
                 <img src={`https://media.motiontalentafrica.co.ke/media/avatars/${obj.profile_photo}`} alt=""/>
                 <div className="absolute h-center">
                     <span className="block playfair-m gold">{obj.name}</span>
-                    <span className="block playfair-sm">{obj.category}</span>
+                    <span className="block playfair-sm">{obj.tag}</span>
                 </div>
             </div>
         </a>
