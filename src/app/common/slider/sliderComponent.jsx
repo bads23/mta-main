@@ -1,12 +1,46 @@
 import React, { Component } from 'react'
-import pic1 from '../assets/img/ALGERIA.jpg'
-import pic2 from '../assets/img/harambee.jpg'
-var Carousel = require('react-responsive-carousel').Carousel;
+import ApiGet from '../../config/axios'
+import URLS from '../../config/settings'
+// var Carousel = require('react-responsive-carousel').Carousel;
+
+
+const Slide = ({data}) => {
+  return (
+    <>
+      <div className="slides">
+        <img src={data.Cover_Image} alt="algeria_pic"/>
+        <div className="caption">
+          <a href={`news/article/${data.id}`}>
+            <h1>
+              {data.Title}
+            </h1>
+          </a>
+        </div>
+      </div>
+    </>
+  )
+}
+
 
 class Slider extends Component {
 
+  state = {
+    news: []
+  }
+
   componentDidMount(){
-    this.autoSlide();
+    this.getNews()
+  }
+
+  getNews = () =>{
+    ApiGet(`${URLS().NEWS}`)
+    .then(res => {
+      this.setState({
+        news: res.data
+      })
+
+      this.autoSlide();
+    })
   }
 
   autoSlide(){
@@ -48,29 +82,23 @@ class Slider extends Component {
         <span className="slideBtns" id="slideprev" onClick={this.slidePrev}></span>
         <span className="slideBtns" id="slidenext" onClick={this.slideNext}></span>
         <div id="sliderWrap">
-          <div className="slides">
-            <img src={pic1} alt="algeria_pic"/>
-            <div className="caption">
-              <a href="news/article1">
-                <h1>
-                  Africa cup of Nations 2019, CAIRO, EGYPT: The Champions Group “C”; A Kenyans’s Perspective.
-                </h1>
-              </a>
-            </div>
-          </div>
-
-          <div className="slides">
-            <img src={pic2} alt="harambee_pic"/>
-            <div className="caption">
-              <a href="news/article2">
-                <h1>
-                THE SPORTS ACT, NO. 25 OF 2013: REGISTRATION AND REGULATION OF SPORTS AND LICENCING; AN OVERVIEW
-                </h1>
-              </a>
-            </div>
-          </div>
+          
+          {
+            this.state.news.length > 0 ? (
+              <>
+              {
+                this.state.news.map(item =>(
+                  <Slide data={item}/>
+                ))
+              }
+              </>
+            ) : (
+              <>
+              </>
+            )
+          }
+          
         </div>
-        
       </div>
     )
   }

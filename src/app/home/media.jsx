@@ -10,7 +10,7 @@ const Videos = () =>{
 
                 <div className="videoContainer">
                 <iframe 
-                    src={mediaLinks.youtube} 
+                    src={mediaLinks.youtube} title="videos"
                     frameBorder="0" allow="autoplay; encrypted-media" allowFullScreen></iframe>
                 </div>
             </div>
@@ -26,7 +26,7 @@ const Music = () =>{
 
                 <div className="musicContainer">
                 <iframe 
-                    width="100%" height="362" 
+                    width="100%" height="362" title="music"
                     scrolling="no" frameBorder="no" allow="autoplay" 
                     src={mediaLinks.soundcloud}></iframe>
                 </div>

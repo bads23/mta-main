@@ -1,5 +1,4 @@
 import React from 'react'
-import ac from '../common/assets/img/ac.png'
 
 import items from '../common/assets/json/items.json'
 import pic from '../common/assets/img/Drumx2.png'

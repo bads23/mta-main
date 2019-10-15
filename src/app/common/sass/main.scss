@@ -19,7 +19,7 @@
 body, html{
   width: 100%;
   margin: 0px;
-  height: 100%;
+  // height: 100%;
 }
 
 a{
@@ -70,8 +70,8 @@ a{
 .MidSection{
   width: 100%;
   position: relative;
-  top: 0px;
+  top: 100px;
   max-width: 1400px;
   @extend .centered-section ;
-  @include padding(20px);
+  // @include padding(20px);
 }

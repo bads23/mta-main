@@ -1,10 +1,9 @@
 import React, {useState, useEffect} from 'react'
-import {Link} from 'react-router-dom'
+// import {Link} from 'react-router-dom'
 
 import ApiGet from '../config/axios'
 import URLS from '../config/settings'
 
-import pic from '../common/assets/img/ac.png'
 import ClientData from '../common/assets/json/clients.json';
 
 const Client = ({obj}) =>{

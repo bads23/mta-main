@@ -1,15 +1,15 @@
 import React, {useState, useEffect} from 'react'
 import { BrowserRouter as Router, Route, Link} from 'react-router-dom'
-import NoContent from '../common/404content'
+// import NoContent from '../common/404content'
 
 import ApiGet from '../config/axios'
 import URLS from '../config/settings'
 
 import Header from '../common/header/header'
-import pic from '../common/assets/img/ac.png'
+// import pic from '../common/assets/img/ac.png'
 
 import Bio from './bio'
-import ClientData from '../common/assets/json/clients.json'
+// import ClientData from '../common/assets/json/clients.json'
 
 const Client = ({obj}) =>{
     return (
@@ -55,7 +55,7 @@ const Music = ({props}) => {
 
     return(
         <Router>
-            <section className="MidSection relative">
+            <section>
                 <Route
                     exact
                     path="/Music"
@@ -68,7 +68,6 @@ const Music = ({props}) => {
                                         <Client obj={data} />
                                     ))
                                 }
-                                
                         </div>
                         </>
                     )}

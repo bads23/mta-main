@@ -7,7 +7,7 @@ import Sports from './app/sports'
 import Entertainers from './app/entertainers'
 import Events from './app/events'
 import News from './app/news'
-import Article, {Article2} from './app/news/article'
+import Article from './app/news/article'
 import About from './app/about'
 import Contact from './app/contact'
 
@@ -21,8 +21,7 @@ function App() {
         <Route path="/Entertainers" component={Entertainers} />
         <Route path="/Events" component={Events} />
         <Route path="/News" component={News} />
-        <Route path="/News/article1" component={Article} />
-        <Route path="/News/article2" component={Article2} />
+        <Route path="/News/Article/:id" render={(props) =>  <Article props={props}/>} />
         <Route path="/About-us" component={About} />
         <Route path="/Contact-us" component={Contact} />
       </Router>

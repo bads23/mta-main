@@ -1,5 +1,4 @@
-import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
 import Logo from "../assets/svg/MTA.svg";
 
 const LeftHeader = () => {
@@ -39,7 +38,7 @@ const RightHeader = () => {
           <a href="/Contact-us">Contact Us</a>
         </span>
         <span className="playfair-links">
-          <a href="http://store.motiontalentafrica.co.ke" target="_blank">Shop</a>
+          <a href="http://store.motiontalentafrica.co.ke" target="_blank" rel="noopener noreferrer">Shop</a>
         </span>
       </div>
       <hr />
@@ -93,7 +92,7 @@ const Mobile = () => {
           <a href="/contact-us">
             <span>Contact us</span>
           </a>
-          <a href="https://store.motiontalentafrica.co.ke" target="_blank">
+          <a href="https://store.motiontalentafrica.co.ke" target="_blank" rel="noopener noreferrer">
             <span>Shop</span>
           </a>
         </div>

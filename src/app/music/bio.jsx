@@ -30,19 +30,20 @@ const BioImages = ({data}) =>{
 
 const BioText = ({data}) =>{
     
-    // useEffect(() => {
-    //     var bio = document.getElementById('BioText')
-    //     var el = document.createElement('div')
-    //     el.innerHTML = `${data.bio}`
-        
-    //     bio.appendChild(el);
-    // }, [])
-    
+    const insertHtml = () =>{
+        document.getElementById('bioData').innerHTML = data.bio
+    }
+
+    useEffect(() => {
+        insertHtml()
+    })
+
     return(
         <>
             <div id="BioText" className="long-text">
                 <h2>Bio</h2>
-                {data.bio}
+                
+                <div id="bioData"></div>
             </div>
         </>
     )
@@ -58,9 +59,8 @@ const Bio = ({props}) =>{
             setClient(res.data)
         })
     }
-    useEffect(() => {
-        getClient()
-    },[])
+
+    useEffect(() => getClient(), [])
 
     return(
         <>
