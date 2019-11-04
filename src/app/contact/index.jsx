@@ -19,6 +19,14 @@ const Contact = () => {
                 <Textarea label="Message" ph="What is on your mind?" />
                 <button className="btn-black">Submit</button>
             </form>
+
+            <div className="mg-v-50 align-center">
+                <h2 className="playfair gold">Reach out to us.</h2>
+                <p className="lato-m">
+                    <span> <i className="fas fa-phone gold"></i>   0712 466 555 / 0782 466 555</span> <br/>
+                    <span><i className="fas fa-envelope gold"></i>  info@motiontalentafrica.co.ke</span>
+                </p>
+            </div>
         </>
     )
 }
