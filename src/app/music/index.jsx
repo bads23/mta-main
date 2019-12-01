@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import { BrowserRouter as Router, Route, Link} from 'react-router-dom'
+import { BrowserRouter as Router, Route} from 'react-router-dom'
 // import NoContent from '../common/404content'
 
 import ApiGet from '../config/axios'
@@ -16,7 +16,7 @@ const Client = ({obj}) =>{
         <a href={`/music/${obj.id}`}>
             <div className="client relative mg-v-20">
                 {
-                    obj.profile_photo == '' ? 
+                    obj.profile_photo === '' ? 
                     (
                         <div className="emptyimg"></div>
                     ) : (

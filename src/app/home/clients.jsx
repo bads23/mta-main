@@ -11,7 +11,7 @@ const Client = ({obj}) =>{
         <a href={`/music/${obj.id}`}>
             <div className="client relative mg-v-20">
                 {
-                    obj.profile_photo == '' ? 
+                    obj.profile_photo === '' ? 
                     (
                         <div className="emptyimg"></div>
                     ) : (
