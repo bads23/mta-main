@@ -12,7 +12,7 @@ const Contact = () => {
     return(
         <>
             <h1 className="playfair-xlg align-center gold">Contact Us</h1>
-            <form>
+            <form id="contact-form">
                 <Input1 label="Name" type="text" ph="Your Full name"/>
                 <Input1 label="Email" type="email" ph="Email Address"/>
                 <Input1 label="Subject" type="text" ph="Your Full name"/>

@@ -6,3 +6,50 @@
     color: $color-gold;
     font-size: 60px;
 }
+
+#about-wrap{
+    text-align: center;
+    position: relative;
+    top: 70px;
+    .team{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-between;
+        div{
+            text-align: center; 
+            padding: 10px 20px;
+            width: 360px;
+            .av-wrap{
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                background-color: $color-cream;
+                margin: 0px auto;
+                overflow: hidden;
+                border: 1px solid $color-gold;
+                padding: 0;
+                position: relative;
+                img{
+                    width: 150px;
+                    position: absolute;
+                    @extend .h-center;
+                }
+            }
+            h3{
+                @extend .playfair, .gold;
+            }
+            span{
+                @extend .playfair, .i ;
+            }
+            p{
+                @extend .long-text ;
+            }
+        }     
+    }
+}
+
+.long-par{
+    text-align: center;
+}

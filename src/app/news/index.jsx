@@ -43,6 +43,7 @@ const Index = () => {
     return (
         <>
             <Header />
+            <div id="topbar"></div>
             <div className="MidSection">
                 <Router>
                     <Route exact path="/News" render={() =>(

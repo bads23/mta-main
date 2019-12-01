@@ -13,18 +13,27 @@ import Bio from './bio'
 
 const Client = ({obj}) =>{
     return (
-        <Link to={`/Music/${obj.id}`}>
+        <a href={`/music/${obj.id}`}>
             <div className="client relative mg-v-20">
-                <img src={`http://media.motiontalentafrica.co.ke/media/avatars/${obj.profile_photo}`} alt=""/>
-                <div className="absolute h-center">
+                {
+                    obj.profile_photo == '' ? 
+                    (
+                        <div className="emptyimg"></div>
+                    ) : (
+                        <div className="imgwrap">
+                            <img src={`https://media.motiontalentafrica.co.ke/media/avatars/${obj.profile_photo}`} alt=""/>    
+                        </div>
+                    )
+                }
+                
+                <div className="absolute h-center align-center">
                     <span className="block playfair-m gold">{obj.name}</span>
-                    <span className="block playfair-sm">{obj.type}</span>
+                    <span className="block playfair-sm">{obj.tag}</span>
                 </div>
             </div>
-        </Link>
+        </a>
     )
 }
-
 
 const Index = () => {
     return(

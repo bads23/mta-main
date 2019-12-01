@@ -41,17 +41,28 @@
     width: 260px;
     height: 260px;
     border: 1px solid rgba(112,112,112, .15);
-    img{
-        @extend .h-center, .absolute ;
-        background-color: #707070;
-        width: 60%;
-        top: 20px;
+    .imgwrap{
+        width: 100%;
+        height: 80%;
+        overflow: hidden;
+        position: relative;
+        img{
+            @extend .h-center, .absolute;
+            background-color: #707070;
+            width: 100%;
+            object-fit: fill;
+        }
+        div{
+            bottom: 10px;
+            text-align: center;
+        }
     }
+}
 
-    div{
-        bottom: 10px;
-        text-align: center;
-    }
+.emptyimg{
+    background-color: $color-cream;
+    width: 100%;
+    height: 80%;
 }
 
 .big-client{
