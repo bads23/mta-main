@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import ApiGet from '../config/axios'
+import ApiGet, {ApiPut} from '../config/axios'
 import URLS from '../config/settings'
 
 const Article = ({props}) =>{
@@ -11,11 +11,23 @@ const Article = ({props}) =>{
         .then(res => {
             setArticle(res.data)
             setContent(res.data.Content)
+            updateViews(res.data)
         })
+        
     }
 
     const setContent = (data) => {
         document.getElementById('articleDiv').innerHTML = data
+    }
+
+    const updateViews = (data) => {
+        data.views += 1
+        console.log(data)
+
+        ApiPut(`${URLS().NEWS}/${props.match.params.id}/`, data)
+        .then(res => {
+            console.log(res.data)
+        })
     }
 
     useEffect(() => {

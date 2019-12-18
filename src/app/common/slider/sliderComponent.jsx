@@ -8,7 +8,7 @@ const Slide = ({data}) => {
   return (
     <>
       <div className="slides">
-        <img src={data.Cover_Image} alt="algeria_pic"/>
+        <img src={data.Cover_Image} alt={data.Title}/>
         <div className="caption">
           <a href={`news/article/${data.id}`}>
             <h1>
