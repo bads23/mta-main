@@ -52,7 +52,7 @@ management, strategic brand development and beyond. We purpose to redefine the b
             <h2 className="playfair-xlg align-center gold mg-v-50">Target Audience</h2>
             <p className="long-text">
             The company targets to provide aspiring and experienced talent professionals within and outside Kenya with quality management into a complete professional,
-competing at the world stage; and, quality and customized entertainment services to our clients seeking such entertainment. You may also purchase music and sports merchandise on our <a href="http://store.motiontalentafrica.co.ke/" target="_blank" className="gold"> <b>Online Store.</b> </a> 
+competing at the world stage; and, quality and customized entertainment services to our clients seeking such entertainment. You may also purchase music and sports merchandise on our <a href="http://store.motiontalentafrica.co.ke/" target="_blank" className="gold" rel="noopener noreferrer"> <b>Online Store.</b> </a> 
             </p>
 
             <div className="fl-btw" id="statements">
