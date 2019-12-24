@@ -6,12 +6,13 @@ const Videos = () =>{
     return(
         <>
             <div className="video-section">
-                <h2 className="playfair-lg">Videos</h2>
-
+                <h2 className="playfair-xlg gold align-center mg-v-20">Videos</h2>
                 <div className="videoContainer">
                 <iframe 
                     src={mediaLinks.youtube} title="videos"
-                    frameBorder="0" allow="autoplay; encrypted-media" allowFullScreen></iframe>
+                    frameBorder="0" 
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen></iframe>
                 </div>
             </div>
         </>
@@ -21,12 +22,12 @@ const Videos = () =>{
 const Music = () =>{
     return(
         <>
-            <div className="music-section">
-                <h2 className="playfair-lg">Music</h2>
+            <div className="music-section mg-v-50">
+                <h2 className="playfair-xlg gold align-center">Music</h2>
 
                 <div className="musicContainer">
                 <iframe 
-                    width="100%" height="362" title="music"
+                    width="100%" title="music"
                     scrolling="no" frameBorder="no" allow="autoplay" 
                     src={mediaLinks.soundcloud}></iframe>
                 </div>
@@ -38,7 +39,7 @@ const Music = () =>{
 
 const Media = () =>{
     return(
-        <div className="centered-section fl-btw fl-wrap pd-50">
+        <div className="centered-section pd-50">
             <Videos/>
             <Music />
         </div>

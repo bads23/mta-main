@@ -39,7 +39,7 @@ const Article = ({props}) =>{
             <div className="article">
 
                 <div className="articleImg">
-                    <img src={article.Cover_Image} alt="hero"/>
+                    <img src={`${URLS().IMGS}${article.Cover_Image}`} alt="hero"/>
                 </div>
 
                 <h1 className="playfair-xlg align-center">{article.Title}</h1>

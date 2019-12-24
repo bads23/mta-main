@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route} from 'react-router-dom'
 import ApiGet from '../config/axios'
 import URLS from '../config/settings' 
 import Header from '../common/header/header'
+import Footer from '../common/header/footer'
 import Article from './article'
 import FormatDate from '../common/functions/formatter'
 
@@ -11,10 +12,10 @@ const Item = ({news}) => {
         <>
             <div className="articleItem fl-btw fl-wrap mg-v-50" key={news.id}>
                 <div className="articleItemImg">
-                    <img src={news.Cover_Image} alt=""/>
+                    <img src={`${URLS().IMGS}${news.Cover_Image}`} alt=""/>
                 </div>
                 <div className="articleItemInfo">
-                    <h3 className="playfair-lg">{news.Title}</h3>
+                    <a href={`/news/article/${news.id}`}><h3 className="playfair-lg">{news.Title}</h3></a>
                     <span className="playfair-m">{FormatDate(news.date_added).date}</span>
                     <p className="long-text">{news.Subtitle}</p>
 
@@ -48,7 +49,7 @@ const Index = () => {
                 <Router>
                     <Route exact path="/News" render={() =>(
                         <>
-                            <h1 className="playfair-xlg gold">News</h1>
+                            <h1 className="playfair-xlg gold align-center">News</h1>
                             <div className="articlesWrap">
                                 {
                                     news.length > 0 ? (
@@ -71,7 +72,6 @@ const Index = () => {
 
                 </Router>
             </div>
-            
         </>
     )
 }

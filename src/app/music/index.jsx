@@ -21,7 +21,7 @@ const Client = ({obj}) =>{
                         <div className="emptyimg"></div>
                     ) : (
                         <div className="imgwrap">
-                            <img src={`https://media.motiontalentafrica.co.ke/media/avatars/${obj.profile_photo}`} alt=""/>    
+                            <img src={`${URLS().IMGS}${obj.profile_photo}`} alt=""/>    
                         </div>
                     )
                 }

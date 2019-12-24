@@ -9,7 +9,7 @@ const BioImages = ({data}) =>{
         <>
             <div className="bioImg">
                 <div id="bioImgWrap" className="mg-v-20">
-                    <img src={`https://media.motiontalentafrica.co.ke/media/avatars/${data.profile_photo}`} alt=""/>
+                    <img src={`${URLS().IMGS}${data.profile_photo}`} alt=""/>
                 </div>
                 <div>
                     <h2 className="gold playfair-lg mg-0">{data.name}</h2>

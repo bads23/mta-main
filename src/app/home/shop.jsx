@@ -6,7 +6,7 @@ import { shuffle } from '../common/functions/helpers'
 const Item = ({obj}) =>{
     return (
         <div className="item relative mg-v-20">
-            <a href={`http://store.motiontalentafrica.co.ke/product/${obj.id}`} target="_blank" rel="noopener noreferrer">
+            <a href={`https://store.motiontalentafrica.co.ke/product/${obj.id}`} target="_blank" rel="noopener noreferrer">
                 <div className="prwrap"> 
                     <img src={`http://media.motiontalentafrica.co.ke/${obj.images[0].path}`} alt=""/>
                 </div>
@@ -50,10 +50,10 @@ const Shop = () =>{
 
     return(
         <div className="centered-section mg-v-50 pd-50">
-            <h2 className="playfair-lg">Online Shop</h2>
+            <h2 className="playfair-xlg gold align-center">Online Shop</h2>
             <div className="" id="item-catalogue">
                 {
-                    items.slice(0,7).map(item => (
+                    items.slice(0,9).map(item => (
                         <Item obj={item}/>
                     ))
                 }

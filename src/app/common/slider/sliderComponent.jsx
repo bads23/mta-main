@@ -1,14 +1,13 @@
 import React, { Component } from 'react'
 import ApiGet from '../../config/axios'
 import URLS from '../../config/settings'
-// var Carousel = require('react-responsive-carousel').Carousel;
 
 
 const Slide = ({data}) => {
   return (
     <>
       <div className="slides">
-        <img src={data.Cover_Image} alt={data.Title}/>
+        <img src={`${URLS().IMGS}${data.Cover_Image}`} alt={data.Title}/>
         <div className="caption">
           <a href={`news/article/${data.id}`}>
             <h1>

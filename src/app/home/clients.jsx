@@ -16,7 +16,7 @@ const Client = ({obj}) =>{
                         <div className="emptyimg"></div>
                     ) : (
                         <div className="imgwrap">
-                            <img src={`https://media.motiontalentafrica.co.ke/media/avatars/${obj.profile_photo}`} alt=""/>    
+                            <img src={`${URLS().IMGS}/${obj.profile_photo}`} alt=""/>    
                         </div>
                     )
                 }
@@ -50,7 +50,7 @@ const Clientele = () =>{
     return(
         <div className="centered-section mg-v-50 pd-50">
 
-            <h2 className="playfair-lg">Clientele</h2>
+            <h2 className="playfair-xlg gold align-center">Clientele</h2>
 
             <div className="fl-btw fl-wrap">
                 {

@@ -1,9 +1,14 @@
 const URLS = () => {
   const BASE_URL = 'https://b23.pythonanywhere.com/'
   // const BASE_URL = 'http://localhost:8000/'
+  // const IMG_URL = 'http://mta.lan/'
+  const IMG_URL = 'https://media.motiontalentafrica.co.ke/'
+
+
   return (
     {
       "SERVER_URL": BASE_URL,
+      "IMGS": IMG_URL,
       "AUTH": BASE_URL + 'api/token/',
       "REFRESH": BASE_URL + 'api/token/refresh/',
       "CATEGORIES": BASE_URL + 'categories/',
