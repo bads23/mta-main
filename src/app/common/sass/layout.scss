@@ -17,6 +17,14 @@
   top: 165px;
 }
 
+.full-section{
+  width: 100%;
+  padding: 40px 30px;
+  box-sizing: border-box;
+  margin: 0px auto;
+  position: relative;
+}
+
 #top-bar{
   position: absolute;
   background-color: $color-cream ;

@@ -52,13 +52,18 @@
       position: absolute;
       left: 50%;
       bottom: 0px;
-      padding: 50px 0px 100px 0px;
+      padding: 50px 0px 50px 0px;
       background-image:linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.7));
       @extend .playfair-lg, .h-center, .align-center ;
       h1{
         width: 50%;
         margin: 0px auto;
         text-shadow: 1px 1px 2px #000;
+      }
+      span{
+        &:hover{
+          text-decoration: underline;
+        }
       }
     }
   }

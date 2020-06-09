@@ -16,7 +16,6 @@
 
 .articleImg{
     background-color: $color-cream;
-    border: 1px solid $color-gold;
     overflow: hidden;
     max-height: 600px;
     img{
@@ -29,4 +28,23 @@
     margin: 0px auto;
     position: relative;
     top: 150px;
+    .text-wrapper{
+        width: 80%;
+        display: flex;
+        .long-text{
+            width: 80%;
+            text-align: justify;
+        }
+        .author{
+            padding-top: 50px;
+            width: 30%;
+
+            .author_socials{
+                a{
+                    display: inline-block;
+                    margin: 0px 5px;
+                }
+            }
+        }
+    }
 }

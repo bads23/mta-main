@@ -13,6 +13,9 @@ const Slide = ({data}) => {
             <h1>
               {data.Title}
             </h1>
+            <span className="lato-sm i b">
+              Read More  <i className="fas fa-angle-right"></i>
+            </span>
           </a>
         </div>
       </div>

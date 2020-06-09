@@ -48,9 +48,9 @@ const Clientele = () =>{
     },[])
 
     return(
-        <div className="centered-section mg-v-50 pd-50">
+        <div className="full-section mg-v-50 pd-50">
 
-            <h2 className="playfair-xlg gold align-center">~ Clientele ~</h2>
+            <h2 className="playfair-xlg gold align">Clients</h2>
 
             <div className="fl-btw fl-wrap">
                 {

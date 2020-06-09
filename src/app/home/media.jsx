@@ -6,7 +6,7 @@ const Videos = () =>{
     return(
         <>
             <div className="video-section">
-                <h2 className="playfair-xlg gold align-center mg-v-20"> ~ Videos ~</h2>
+                <h2 className="playfair-xlg gold mg-v-20">Videos</h2>
                 <div className="videoContainer">
                 <iframe 
                     src={mediaLinks.youtube} title="videos"
@@ -22,8 +22,8 @@ const Videos = () =>{
 const Music = () =>{
     return(
         <>
-            <div className="music-section mg-v-50">
-                <h2 className="playfair-xlg gold align-center">~ Music ~</h2>
+            <div className="music-section">
+                <h2 className="playfair-xlg gold">Music</h2>
 
                 <div className="musicContainer">
                 <iframe 
@@ -39,8 +39,8 @@ const Music = () =>{
 
 const Media = () =>{
     return(
-        <div className="centered-section pd-50">
-            <Videos/>
+        <div className="full-section pd-50" id="media-wrapper"> 
+            <Videos />
             <Music />
         </div>
     )

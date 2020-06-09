@@ -5,7 +5,7 @@ import { shuffle } from '../common/functions/helpers'
 
 const Item = ({obj}) =>{
     return (
-        <div className="item relative mg-v-20">
+        <div className="item relative mg-20">
             <a href={`https://store.motiontalentafrica.co.ke/product/${obj.id}`} target="_blank" rel="noopener noreferrer">
                 <div className="prwrap"> 
                     <img src={`http://media.motiontalentafrica.co.ke/${obj.images[0].path}`} alt=""/>
@@ -17,22 +17,6 @@ const Item = ({obj}) =>{
         </div>
     )
 }
-
-// const BigItem = (items) =>{
-
-//     var item_in = getRndInteger(items.length)
-
-//     return (
-//         <div className="big-client relative mg-v-20">
-//             <img src={pic} alt=""/>
-//             <div className="absolute h-center align-center">
-//                 <span className="block playfair-m"> {items[item_in].name} </span>
-//             </div>
-//         </div>
-//     )
-// }
-
-
 
 const Shop = () =>{
     const [items, setItems] = useState([])
@@ -49,11 +33,11 @@ const Shop = () =>{
     }, [])
 
     return(
-        <div className="centered-section mg-v-50 pd-50">
-            <h2 className="playfair-xlg gold align-center"> ~ Online Shop ~ </h2>
+        <div className="full-section mg-v-50 pd-50 store-div">
+            <h2 className="playfair-xlg gold">Online Shop</h2>
             <div className="" id="item-catalogue">
                 {
-                    items.slice(0,9).map(item => (
+                    items.slice(0,8).map(item => (
                         <Item obj={item}/>
                     ))
                 }
