@@ -25,7 +25,7 @@ management, strategic brand development and beyond. We purpose to redefine the b
             <div className="team">
                 <div>
                     <div className="av-wrap">
-                        <img src="" alt=""/>
+                        <img src="https://media.motiontalentafrica.co.ke/media/avatars/ceo.jpg" alt=""/>
                     </div>
                     <h3>MUNASE MUKHOMBWA</h3>
                     <span>Founder/CEO</span>
@@ -34,9 +34,9 @@ management, strategic brand development and beyond. We purpose to redefine the b
                 
                 <div>
                     <div className="av-wrap">
-                        <img src="" alt=""/>
+                        <img src="https://media.motiontalentafrica.co.ke/media/avatars/shaman.jpg" alt=""/>
                     </div>
-                    <h3>VICTOR ATANDI </h3>
+                    <h3>Shaman </h3>
                     <span>Sound Engineer and Director</span>
                     <p>Victor Makori Atandi is a music enthusiast. At Motion Talent Africa (MTA) he is the Sound Engineer and is responsible for the quality of audio content created amongst MTA’s creative(s) and athletes. He has tremendous experience in sound production having produced music for several well established artists.</p></div>
                     
@@ -91,22 +91,17 @@ competing at the world stage; and, quality and customized entertainment services
 
             <div id="stats" className="fl-btw">
                 <div className="align-center">
-                    <h1 className="gold playfair">5</h1>
+                    <h1 className="playfair">5</h1>
                     <p className="playfair-lg">Artists Signed</p>
                 </div>
 
-                {/* <div className="align-center">
-                    <h1 className="gold playfair"> - </h1>
-                    <p className="playfair-lg">Songs Released</p>
-                </div> */}
-
                 <div className="align-center">
-                    <h1 className="gold playfair">2</h1>
+                    <h1 className="playfair">2</h1>
                     <p className="playfair-lg">Sports Personnel</p>
                 </div>
 
                 <div className="align-center">
-                    <h1 className="gold playfair">3</h1>
+                    <h1 className="playfair">3</h1>
                     <p className="playfair-lg">Years of experience</p>
                 </div>
             </div>
@@ -124,7 +119,6 @@ const Index = () => {
                     <About/>
                 </div>
             </div>
-            
         </>
     )
 }

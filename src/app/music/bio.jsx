@@ -15,11 +15,11 @@ const BioImages = ({data}) =>{
                     <h2 className="gold playfair-lg mg-0">{data.name}</h2>
                     <span className="lato">{data.tag}</span>
                     <span className="socials mg-v-50 block">
-                        <i className="fab fa-facebook"></i>
-                        <i className="fab fa-youtube"></i>
-                        <i className="fab fa-twitter"></i>
-                        <i className="fab fa-instagram"></i>
-                        <i className="fab fa-soundcloud"></i>
+                        <a href={data.facebook} target="_blank"> <i className="fab fa-facebook"></i></a>
+                        <a href={data.youtube} target="_blank"> <i className="fab fa-youtube"></i></a>
+                        <a href={data.twitter} target="_blank"> <i className="fab fa-twitter"></i></a>
+                        <a href={data.instagram} target="_blank"> <i className="fab fa-instagram"></i></a>
+                        <a href={data.soundcloud} target="_blank"> <i className="fab fa-soundcloud"></i></a>
                     </span>
                 </div>
             </div>

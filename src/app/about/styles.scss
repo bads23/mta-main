@@ -2,6 +2,17 @@
     width: 30%;
 }
 
+@media (max-width: 1200px){
+    #statements{
+        flex-direction: column;
+        justify-content: center;
+        div{
+            width: 80%;
+            margin: 0px auto;
+        }
+    }
+}
+
 #stats div h1{
     color: $color-gold;
     font-size: 60px;
@@ -52,4 +63,29 @@
 
 .long-par{
     text-align: center;
+}
+
+#stats div{
+    position: relative;
+    h1{
+        color: white;
+    }
+    h1::before{
+        content: '';
+        background-color: $color-gold;
+        height: 100px;
+        width: 100px;
+        display: block;
+        position: absolute;
+        border-radius: 50%;
+        left: 50%; top: 45%;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+    }
+}
+
+@media (max-width: 1520px){
+    .team div{
+        margin: 0px auto;
+    }
 }

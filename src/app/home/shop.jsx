@@ -50,7 +50,7 @@ const Shop = () =>{
 
     return(
         <div className="centered-section mg-v-50 pd-50">
-            <h2 className="playfair-xlg gold align-center">Online Shop</h2>
+            <h2 className="playfair-xlg gold align-center"> ~ Online Shop ~ </h2>
             <div className="" id="item-catalogue">
                 {
                     items.slice(0,9).map(item => (
