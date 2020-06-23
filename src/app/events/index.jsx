@@ -19,7 +19,7 @@ const Item = ({news}) => {
                     <span className="playfair-m">{FormatDate(news.date_added).date}</span>
                     <p className="long-text">{news.content}</p>
 
-                    <a href="#"><button className="btn btn-black">Tickets</button></a>
+                    {/* <a href="#"><button className="btn btn-black">Tickets</button></a> */}
                 </div>
             </div>
         </>

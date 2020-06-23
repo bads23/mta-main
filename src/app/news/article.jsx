@@ -55,15 +55,15 @@ const Article = ({props}) =>{
                         <span className="lato-sm i">October 16, 2019</span>
 
                         <p className="author_socials">
-                            <a target="_blank" href="https://twitter.com/mtalent_africa/">
+                            <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/mtalent_africa/">
                                 <i className="fab fa-twitter"></i>
                             </a>
 
-                            <a target="_blank" href="https://www.facebook.com/motiontalentafrica/">
+                            <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/motiontalentafrica/">
                                 <i className="fab fa-facebook-square"></i>
                             </a>
 
-                            <a target="_blank" href="https://www.instagram.com/motiontalentafrica/">
+                            <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/motiontalentafrica/">
                                 <i className="fab fa-instagram"></i>
                             </a>
                         </p>
