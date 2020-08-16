@@ -19,10 +19,10 @@
 
 .full-section{
   width: 100%;
-  padding: 40px 30px;
-  box-sizing: border-box;
-  margin: 0px auto;
+  max-width: 1400px;
+  margin: 50px auto;
   position: relative;
+  border-bottom: 1px solid rgba(0,0,0,0.2);
 }
 
 #top-bar{
@@ -32,4 +32,12 @@
   height: 165px;
   z-index: 9998;
   top: 0px
+}
+
+@media(max-width: 500px){
+
+  .full-section{
+    width: 90%;
+    margin: 50px auto;
+  }
 }

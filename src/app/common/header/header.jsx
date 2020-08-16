@@ -11,11 +11,14 @@ const LeftHeader = () => {
         <span className="playfair-links">
           <a href="/Sports">Sports</a>
         </span>
-        <span className="playfair-links">
+        {/* <span className="playfair-links">
           <a href="/Entertainers">Entertainers</a>
-        </span>
-        <span className="playfair-links">
+        </span> */}
+        {/* <span className="playfair-links">
           <a href="/Events">Events</a>
+        </span> */}
+        <span className="playfair-links">
+          <a href="/News">News</a>
         </span>
       </div>
       <hr />
@@ -28,9 +31,9 @@ const RightHeader = () => {
   return (
     <div id="right-header" className="header-sides">
       <div className="top fl-btw mg-v-20">
-        <span className="playfair-links">
+        {/* <span className="playfair-links">
           <a href="/News">News</a>
-        </span>
+        </span> */}
         <span className="playfair-links">
           <a href="/About-us">About Us</a>
         </span>
@@ -80,12 +83,12 @@ const Mobile = () => {
           <a href="/Sports">
             <span>Sports</span>
           </a>
-          <a href="/Entertainers">
+          {/* <a href="/Entertainers">
             <span>Entertainers</span>
-          </a>
-          <a href="/Events">
+          </a> */}
+          {/* <a href="/Events">
             <span>Events</span>
-          </a>
+          </a> */}
           <a href="/about-us">
             <span>About Us</span>
           </a>

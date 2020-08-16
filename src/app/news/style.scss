@@ -2,7 +2,6 @@
     .articleItemImg{
         width: 48%;
         background-color: $color-cream;
-        border: 1px solid $color-gold;
         max-height: 300px;
         overflow: hidden;
         img{
@@ -24,21 +23,31 @@
 }
 
 .article{
-    width: 80%;
+    width: 100%;
     margin: 0px auto;
     position: relative;
-    top: 150px;
     .text-wrapper{
         width: 80%;
         display: flex;
+        flex-wrap: wrap;
+        margin: 0px auto;
         .long-text{
-            width: 80%;
+            width: 70%;
             text-align: justify;
         }
         .author{
             padding-top: 50px;
             width: 30%;
-
+            #authorAvatar{
+                width: 75px;
+                height: 75px;
+                border-radius: 50%;
+                background-color: pink;
+                overflow: hidden;
+                img{
+                    width: 100%;
+                }
+            }
             .author_socials{
                 a{
                     display: inline-block;
@@ -47,4 +56,27 @@
             }
         }
     }
+}
+
+
+@media (max-width: 767px){
+    .articleItem{
+        .articleItemImg{
+            width: 100%;
+        }
+        .articleItemInfo{
+            width: 100%;
+        }
+    }
+    .article{
+        .text-wrapper{
+            .long-text{
+                width: 100%;
+            }
+            .author {
+                width: 100%;
+            }
+        }
+    }
+        
 }

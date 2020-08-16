@@ -1,27 +1,12 @@
-import React from 'react'
-// import { BrowserRouter as Router, Route, Link} from 'react-router-dom'
-
-
+import React, {useState, useEffect} from 'react'
 import Header from '../common/header/header'
-// import NoContent from '../common/404content'
+import Footer from '../common/header/footer'
+import ApiGet from '../config/axios'
+import URLS from '../config/settings'
 
-
-const About = () =>{
+const Team = () =>{
     return(
-        <>  
-            <h1 className="playfair-xxlg align-center gold">About Motion Talent Africa</h1>
-            <p className="long-text long-par align-center">
-            We are a talent management and entertainment service provider. Since its founding in 2016, Motion Talent Africa has grown into a preeminent
-entertainment company providing different entertainment packages for different organisations and talent management services. We work in every aspect of
-
-modern entertainment- with recording artists and producers, live bands, djs, writers and athletes/ sports personnel. We are a full service organization,
-supporting our diverse roster of talent via artist/ band management, events planning, music publishing, music distribution, sound and video production, sports
-
-management, strategic brand development and beyond. We purpose to redefine the business of entertainment.
-            </p>
-
-            <h2 className="playfair-xlg align-center gold">Team</h2>
-            
+        <>
             <div className="team">
                 <div>
                     <div className="av-wrap">
@@ -46,50 +31,74 @@ management, strategic brand development and beyond. We purpose to redefine the b
                     </div>
                     <h3>EUGENE MUSUNGU</h3>
                     <span>Visuals Director</span>
-                    <p>Eugene Musungu is passionate about reproducing moments with a blend of creativity. At Motion Talent Africa he is the Visuals Director and is in charge of the creativity of the visual content creation. He has experience in video production having shot content that has been played on the Kenya national mainstream media.</p></div>
+                    <p>Eugene Musungu is passionate about reproducing moments with a blend of creativity. At Motion Talent Africa he is the Visuals Director and is in charge of the creativity of the visual content creation. He has experience in video production having shot content that has been played on the Kenya national mainstream media.</p>
+                </div>
             </div>
+        </>
+    )
+}
 
-            <h2 className="playfair-xlg align-center gold mg-v-50">Target Audience</h2>
-            <p className="long-text">
-            The company targets to provide aspiring and experienced talent professionals within and outside Kenya with quality management into a complete professional,
-competing at the world stage; and, quality and customized entertainment services to our clients seeking such entertainment. You may also purchase music and sports merchandise on our <a href="http://store.motiontalentafrica.co.ke/" target="_blank" className="gold" rel="noopener noreferrer"> <b>Online Store.</b> </a> 
-            </p>
-
+const Statements = ({props}) => {
+    return(
+        <>
             <div className="fl-btw" id="statements">
                 <div>
                     <h2 className="playfair-xlg align-center gold mg-v-50">Vision Statement</h2>
                     <p className="long-text align-center">
-                    To be Africa’s dynamic talent development agency that
-        espouses excellence and objectivity in the identification,
-        training, and management of aspiring and experienced
-
-        talents across the globe.
+                        {props.vision}
                     </p>
                 </div>  
+
                 <div> 
                     <h2 className="playfair-xlg align-center gold mg-v-50">Mission Statement</h2>
                     <p className="long-text align-center">
-                    Motion Talent Africa is determined to significantly
-        reduce the impact of social ills by maximizing the
-        economic and social value of aspiring and experience
-        talent professionals and to provide quality
-        entertainment and event management services for our
-
-        clients.
+                        {props.mission}
                     </p>
-                </div>  
+                </div>
+
                 <div>
-                <h2 className="playfair-xlg align-center gold mg-v-50">Identity Statement</h2>
-                <p className="long-text align-center">
-                A constituency of diverse professionals, creating
-    professional careers and empowering talents in various
-    fields of entertainment and sports, tailored towards
-    providing quality entertainment to clients across Africa.
-                </p>
+                    <h2 className="playfair-xlg align-center gold mg-v-50">Identity Statement</h2>
+                    <p className="long-text align-center">
+                        {props.identity}
+                    </p>
                 </div>
             </div>
+        </>
+    )
+}
+ 
+const About = () =>{
 
-            <div id="stats" className="fl-btw">
+    const [about, setAbout] = useState({})
+    
+    const getAbout = () => {
+        ApiGet(`${URLS().ABOUT}1/`)
+        .then(res=>{
+            setAbout(res.data)
+        })
+    }
+
+    useEffect(() => {
+        getAbout()
+    },[])
+
+    return(
+        <>  
+            <h1 className="playfair-xxlg align-center gold">About Motion Talent Africa</h1>
+            <p className="long-text long-par align-center">
+                {about.about}
+            </p>
+
+            <Team />
+
+            <h2 className="playfair-xlg align-center gold mg-v-50">Target Audience</h2>
+            <p className="long-text">
+                {about.target}
+            </p> 
+
+            <Statements props={about} />
+
+            {/* <div id="stats" className="fl-btw">
                 <div className="align-center">
                     <h1 className="playfair">5</h1>
                     <p className="playfair-lg">Artists Signed</p>
@@ -104,7 +113,7 @@ competing at the world stage; and, quality and customized entertainment services
                     <h1 className="playfair">3</h1>
                     <p className="playfair-lg">Years of experience</p>
                 </div>
-            </div>
+            </div> */}
         </>
     )
 }
@@ -114,11 +123,12 @@ const Index = () => {
     return (
         <>
             <Header />
-            <div className="MidSection">
+            <div className="full-section">
                 <div id="about-wrap">   
                     <About/>
                 </div>
             </div>
+            <Footer />
         </>
     )
 }

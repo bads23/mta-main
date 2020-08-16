@@ -39,7 +39,7 @@ const Index = () => {
     return(
         <>
             <Header />
-            <div className="MidSection">
+            <div className="full-section">
                 <Music />
             </div>
             

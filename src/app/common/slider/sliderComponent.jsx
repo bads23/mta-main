@@ -32,6 +32,7 @@ class Slider extends Component {
 
   componentDidMount(){
     this.getNews()
+    this.absHeader()
   }
 
   getNews = () =>{
@@ -75,6 +76,10 @@ class Slider extends Component {
     } else {
       sliderWrap.style.left = newLeft+'px';
     }
+  }
+
+  absHeader = () =>{
+    document.getElementById('header').style.position = 'absolute';
   }
 
 

@@ -1,18 +1,19 @@
 import React, {useState} from 'react'
 
 import Header from '../common/header/header'
+import Footer from '../common/header/footer'
 import Input1, {Textarea} from '../common/inputs'
 
 import URLS from '../config/settings'
-import {ApiPost, ApiPut} from '../config/axios'
+import {ApiPost} from '../config/axios'
 
 const Contact = () => {
     
     const form_ = {
-        name: 'Steve Karuma',
-        email: 'stevekaruma@gmail.com',
-        subject: 'Testing Contact Form',
-        message: 'This work is done!'
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
     }
 
     const [form, setForm] = useState({...form_})
@@ -77,12 +78,12 @@ const Contact = () => {
 
             <div className="mg-v-50 align-center">
                 
-                <p className="lato-lg">
-                    <span className="mg-v-20"><a href="https://www.instagram.com/motiontalentafrica/"> <i className="fab fa-instagram gold"></i> @motiontalentafrica </a> </span> <br/> <br/> 
-                    <span className="mg-v-20"><a href="https://www.facebook.com/motiontalentafrica/"> <i className="fab fa-facebook gold"></i> @motiontalentafrica </a> </span> <br/> <br/> 
-                    <span className="mg-v-20"><a href="https://twitter.com/mtalent_africa/"> <i className="fab fa-twitter gold"></i> @motiontalentafrica </a> </span> <br/> <br/> 
-                    <span className="mg-v-20"><i className="fas fa-phone gold"></i> 0738 085 111</span> <br/> <br/>
-                    <span className="mg-v-20"><i className="fas fa-envelope gold"></i> <a href="mailto:info@motiontalentafrica.co.ke" className="gold" > info@motiontalentafrica.co.ke </a> </span> <br/> <br/>
+                <p className="lato-lg" id="socials">
+                    <span className="mg-v-20"><a href="https://www.instagram.com/motiontalentafrica/"> <i className="fab fa-instagram"></i> @motiontalentafrica </a> </span> 
+                    <span className="mg-v-20"><a href="https://www.facebook.com/motiontalentafrica/"> <i className="fab fa-facebook"></i> @motiontalentafrica </a> </span> 
+                    <span className="mg-v-20"><a href="https://twitter.com/mtalent_africa/"> <i className="fab fa-twitter"></i> @motiontalentafrica </a> </span> 
+                    <span className="mg-v-20"><i className="fas fa-phone"></i>+254 738 085 111</span>
+                    <span className="mg-v-20"><a href="mailto:info@motiontalentafrica.co.ke"><i className="fas fa-envelope"></i> info@motiontalentafrica.co.ke </a> </span>
                 </p>
             </div>
         </>
@@ -94,10 +95,10 @@ const Index = () => {
     return (
         <>
             <Header />
-            <div className="MidSection">
+            <div className="full-section">
                 <Contact />
             </div>
-            
+            <Footer />
         </>
     )
 }

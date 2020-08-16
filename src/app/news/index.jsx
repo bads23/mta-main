@@ -44,9 +44,8 @@ const Index = () => {
     return (
         <>
             <Header />
-            <div id="topbar"></div>
-            <div className="MidSection">
-                <Router>
+            <Router>
+                <div className="full-section">
                     <Route exact path="/News" render={() =>(
                         <>
                             <h1 className="playfair-xlg gold align-center">News</h1>
@@ -68,10 +67,11 @@ const Index = () => {
                         </>
                     )}/>
 
-                    <Route exact path="news/article/:id" render={(props) => <Article props={props} />} />
+                    <Route path="/News/Article/:id" render={(props) =>  <Article props={props}/>} />
 
-                </Router>
-            </div>
+                </div>
+            </Router>
+            <Footer />
         </>
     )
 }

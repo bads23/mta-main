@@ -7,7 +7,6 @@ import Sports from './app/sports'
 import Entertainers from './app/entertainers'
 import Events from './app/events'
 import News from './app/news'
-import Article from './app/news/article'
 import About from './app/about'
 import Contact from './app/contact'
 // import Countdown from './app/common/header/countdown'
@@ -22,7 +21,7 @@ function App() {
         <Route path="/Entertainers" component={Entertainers} />
         <Route path="/Events" component={Events} />
         <Route path="/News" component={News} />
-        <Route path="/News/Article/:id" render={(props) =>  <Article props={props}/>} />
+        {/* <Route path="/News/Article/:id" render={(props) =>  <Article props={props}/>} /> */}
         <Route path="/About-us" component={About} />
         <Route path="/Contact-us" component={Contact} />
       </Router>

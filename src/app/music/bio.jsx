@@ -31,7 +31,9 @@ const BioImages = ({data}) =>{
 const BioText = ({data}) =>{
     
     const insertHtml = () =>{
-        document.getElementById('bioData').innerHTML = data.bio
+        if (data.bio !== ''){
+            document.getElementById('bioData').innerHTML = data.bio
+        }
     }
 
     useEffect(() => {

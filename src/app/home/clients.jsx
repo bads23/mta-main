@@ -50,7 +50,7 @@ const Clientele = () =>{
     return(
         <div className="full-section mg-v-50 pd-50">
 
-            <h2 className="playfair-xlg gold align">Clients</h2>
+            <h2 className="playfair-xlg align">Clients</h2>
 
             <div className="fl-btw fl-wrap">
                 {

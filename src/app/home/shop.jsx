@@ -34,7 +34,7 @@ const Shop = () =>{
 
     return(
         <div className="full-section mg-v-50 pd-50 store-div">
-            <h2 className="playfair-xlg gold">Online Shop</h2>
+            <h2 className="playfair-xlg">Online Shop</h2>
             <div className="" id="item-catalogue">
                 {
                     items.slice(0,8).map(item => (

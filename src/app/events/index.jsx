@@ -4,7 +4,6 @@ import ApiGet from '../config/axios'
 import URLS from '../config/settings'
 
 import Header from '../common/header/header'
-import NoContent from '../common/404content'
 import FormatDate from '../common/functions/formatter'
 
 const Item = ({news}) => {

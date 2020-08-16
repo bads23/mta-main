@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import ApiGet, {ApiPut} from '../config/axios'
 import URLS from '../config/settings'
+import {FormatDate} from '../common/functions/formatter'
 
 const Article = ({props}) =>{
     
@@ -10,14 +11,15 @@ const Article = ({props}) =>{
         ApiGet(`${URLS().NEWS}/${props.match.params.id}`)
         .then(res => {
             setArticle(res.data)
-            setContent(res.data.Content)
+            setContent(res.data)
             updateViews(res.data)
         })
         
     }
 
     const setContent = (data) => {
-        document.getElementById('articleDiv').innerHTML = data
+        document.getElementById('articleDiv').innerHTML = data.Content
+        document.getElementById('dateDiv').innerText = FormatDate(data.date_added).fDate
     }
 
     const updateViews = (data) => {
@@ -44,15 +46,17 @@ const Article = ({props}) =>{
 
                 <h1 className="playfair-xlg">{article.Title}</h1>
 
-                <span className="dateSpan block playfair-m"></span>
+                <span className="dateSpan block playfair-m "></span>
                 
                 <span className="subtitleSpan lato-sm i block mg-v-20">{article.Subtitle}</span>
                 
                 <div className="text-wrapper">
                     <div className="author">
-                        
+                        <div id="authorAvatar">
+                            <img src="https://media.motiontalentafrica.co.ke/media/avatars/ceo.jpg" alt=""/>
+                        </div>
                         <h3 className="playfair mg-v-5">Munase Mukombwa</h3>
-                        <span className="lato-sm i">October 16, 2019</span>
+                        <span className="lato-sm i" id="dateDiv"></span>
 
                         <p className="author_socials">
                             <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/mtalent_africa/">
@@ -68,7 +72,7 @@ const Article = ({props}) =>{
                             </a>
                         </p>
                     </div>
-                <div className="long-text" id="articleDiv">
+                    <div className="long-text" id="articleDiv">
                         
                     </div>
                 </div>
