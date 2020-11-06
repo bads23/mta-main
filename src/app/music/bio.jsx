@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useCallback} from 'react';
 
 import ApiGet from '../config/axios'
 import URLS from '../config/settings'
@@ -55,14 +55,14 @@ const Bio = ({props}) =>{
 
     const [client, setClient] = useState([])
     
-    const getClient = () =>{
+    const getClient = useCallback(() =>{
         ApiGet(`${URLS().CLIENTS}${props.match.params.id}`)
         .then(res=>{
             setClient(res.data)
         })
-    }
+    },[props])
 
-    useEffect(() => getClient(), [])
+    useEffect(() => getClient(), [getClient])
 
     return(
         <>

@@ -38,7 +38,7 @@ const Shop = () =>{
             <div className="" id="item-catalogue">
                 {
                     items.slice(0,8).map(item => (
-                        <Item obj={item}/>
+                        <Item obj={item} key={item.id}/>
                     ))
                 }
             </div>

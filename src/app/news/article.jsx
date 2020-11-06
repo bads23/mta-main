@@ -7,34 +7,24 @@ const Article = ({props}) =>{
     
     const [article, setArticle] = useState([])
 
-    const getArticle = () => {
+    useEffect(() => {
         ApiGet(`${URLS().NEWS}/${props.match.params.id}`)
         .then(res => {
             setArticle(res.data)
-            setContent(res.data)
-            updateViews(res.data)
+            var obj = {...res.data}
+            
+            //set content
+            document.getElementById('articleDiv').innerHTML = obj.Content
+            document.getElementById('dateDiv').innerText = FormatDate(obj.date_added).fDate
+            
+            // update views
+            obj.views += 1
+            ApiPut(`${URLS().NEWS}/${props.match.params.id}/`, obj)
+            .then(res => {
+                console.log(res.data)
+            })
         })
-        
-    }
-
-    const setContent = (data) => {
-        document.getElementById('articleDiv').innerHTML = data.Content
-        document.getElementById('dateDiv').innerText = FormatDate(data.date_added).fDate
-    }
-
-    const updateViews = (data) => {
-        data.views += 1
-        console.log(data)
-
-        ApiPut(`${URLS().NEWS}/${props.match.params.id}/`, data)
-        .then(res => {
-            console.log(res.data)
-        })
-    }
-
-    useEffect(() => {
-        getArticle()
-    },[])
+    },[props])
     
     return(
         <>

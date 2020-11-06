@@ -1,10 +1,6 @@
 import React, {useState, useEffect} from 'react'
-// import {Link} from 'react-router-dom'
-
 import ApiGet from '../config/axios'
 import URLS from '../config/settings'
-
-import ClientData from '../common/assets/json/clients.json';
 
 const Client = ({obj}) =>{
     return (
@@ -31,9 +27,6 @@ const Client = ({obj}) =>{
 }
 
 const Clientele = () =>{
-    var data = [...ClientData]
-    console.log(data)
-
     const [clients, setClients] = useState([])
     
     const getClients = () =>{
@@ -55,7 +48,7 @@ const Clientele = () =>{
             <div className="fl-btw fl-wrap">
                 {
                     clients.slice(0,4).map(client => (
-                        <Client obj={client} />
+                        <Client obj={client} key={client.id} />
                     ))
                 }
             </div>

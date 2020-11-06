@@ -1,114 +1,80 @@
-import React, { Component } from 'react'
-import ApiGet from '../../config/axios'
-import URLS from '../../config/settings'
+import React, { useState, useEffect } from "react";
+import ApiGet from "../../config/axios";
+import URLS from "../../config/settings";
 
-
-const Slide = ({data}) => {
+const Slide = ({ data }) => {
   return (
     <>
       <div className="slides">
-        <img src={`${URLS().IMGS}${data.Cover_Image}`} alt={data.Title}/>
+        <img src={`${URLS().IMGS}${data.Cover_Image}`} alt={data.Title} />
         <div className="caption">
           <a href={`news/article/${data.id}`}>
-            <h1>
-              {data.Title}
-            </h1>
+            <h1>{data.Title}</h1>
             <span className="lato-sm i b">
-              Read More  <i className="fas fa-angle-right"></i>
+              Read More <i className="fas fa-angle-right"></i>
             </span>
           </a>
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
+const Slider = () => {
+  const [news, setNews] = useState([]);
+  const [slideData, setSlideData] = useState({});
+  const [currSlide, setCurrSlide] = useState(0);
 
-class Slider extends Component {
+  useEffect(() => {
+    // get news posts
+    ApiGet(`${URLS().NEWS}`).then((res) => {
+      setNews(res.data);
+      setSlideData(res.data[0]);
+    });
 
-  state = {
-    news: []
-  }
+    document.getElementById("header").style.position = "absolute";
+  }, []);
 
-  componentDidMount(){
-    this.getNews()
-    this.absHeader()
-  }
-
-  getNews = () =>{
-    ApiGet(`${URLS().NEWS}`)
-    .then(res => {
-      this.setState({
-        news: res.data
-      })
-
-      this.autoSlide();
-    })
-  }
-
-  autoSlide(){
-    setInterval(() => {
-      this.slideNext()
-    }, 7000)
-  }
-
-  slideNext = () =>{
-    var sliderWrap = document.getElementById('sliderWrap')
-    var css = getComputedStyle(sliderWrap);
-    var left = parseInt(css.left, 10);
-    var right = parseInt(css.right, 10);
-    var width = parseInt(css.width, 10);
-    var newLeft = left - (width/3) - 17;
-    if(right > newLeft){
-      sliderWrap.style.left = '0px';
-    } else{
-      sliderWrap.style.left = newLeft+'px';
-    }
-  }
-
-  slidePrev = () =>{
-    var sliderWrap = document.getElementById('sliderWrap')
-    var css = getComputedStyle(sliderWrap);
-    var left = parseInt(css.left, 10);
-    var width = parseInt(css.width, 10);
-    var newLeft = left + (width/3) + 17;
-    if (left === 0) {
+  const slideNext = () => {
+    var next = currSlide + 1;
+    if (next > news.length - 1) {
+      setSlideData(news[0]);
+      setCurrSlide(0);
     } else {
-      sliderWrap.style.left = newLeft+'px';
+      setSlideData(news[next]);
+      setCurrSlide(next);
     }
-  }
+  };
 
-  absHeader = () =>{
-    document.getElementById('header').style.position = 'absolute';
-  }
+  const slidePrev = () => {
+    var next = currSlide - 1;
+    if (next < 0) {
+      setSlideData(news[news.length - 1]);
+      setCurrSlide(news.length - 1);
+    } else {
+      setSlideData(news[next]);
+      setCurrSlide(next);
+    }
+  };
 
-
-  render() {
-    return (
-      <div className="slider hero-slider">
-        <span className="slideBtns" id="slideprev" onClick={this.slidePrev}></span>
-        <span className="slideBtns" id="slidenext" onClick={this.slideNext}></span>
-        <div id="sliderWrap">
-          
-          {
-            this.state.news.length > 0 ? (
-              <>
-              {
-                this.state.news.map(item =>(
-                  <Slide data={item}/>
-                ))
-              }
-              </>
-            ) : (
-              <>
-              </>
-            )
-          }
-          
-        </div>
+  return (
+    <div className="slider hero-slider">
+      <span className="slideBtns" id="slideprev" onClick={slidePrev}></span>
+      <span className="slideBtns" id="slidenext" onClick={slideNext}></span>
+      <div id="sliderWrap">
+        {<Slide data={slideData} />}
+        {/* {news.length > 0 ? (
+          <>
+            {news.map((item) => (
+              <Slide data={item} />
+            ))}
+          </>
+        ) : (
+          <></>
+        )} */}
       </div>
-    )
-  }
-}
+    </div>
+  );
+};
 
-export default Slider
+export default Slider;
