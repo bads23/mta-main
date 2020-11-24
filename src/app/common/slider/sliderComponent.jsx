@@ -28,7 +28,7 @@ const Slider = () => {
   useEffect(() => {
     // get news posts
     ApiGet(`${URLS().NEWS}`).then((res) => {
-      setNews(res.data);
+      setNews(res.data.reverse());
       setSlideData(res.data[0]);
     });
 
