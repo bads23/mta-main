@@ -1,12 +1,12 @@
-import React from 'react';
-import Header from '../common/header/header'
-import Slider from '../common/slider/sliderComponent'
-import Media from './media'
-import Clientele from './clients'
-import Shop from './shop'
-import Footer from '../common/header/footer'
+import React from "react";
+import Header from "../common/header/header";
+import Slider from "../common/slider/sliderComponent";
+import Media from "./media";
+import Clientele from "./clients";
+import Shop from "./shop";
+import Footer from "../common/header/footer";
 
-function Home() {
+const Home = () => {
   return (
     <>
       <Header />
@@ -17,6 +17,6 @@ function Home() {
       <Footer />
     </>
   );
-}
+};
 
 export default Home;

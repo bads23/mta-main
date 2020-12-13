@@ -1,14 +1,15 @@
 import React, { useState, useEffect, useCallback } from "react";
-
-import ApiGet from "../config/axios";
-import URLS from "../config/settings";
+import Api from "app/config/api";
 
 const BioImages = ({ data }) => {
   return (
     <>
       <div className="bioImg">
         <div id="bioImgWrap" className="mg-v-20">
-          <img src={`${URLS().IMGS}${data.profile_photo}`} alt="" />
+          <img
+            src={`${process.env.REACT_APP_MEDIA_URL}${data.profile_photo}`}
+            alt=""
+          />
         </div>
         <div>
           <h2 className="gold playfair-lg mg-0">{data.name}</h2>
@@ -67,7 +68,7 @@ const Bio = ({ props }) => {
   const [client, setClient] = useState([]);
 
   const getClient = useCallback(() => {
-    ApiGet(`${URLS().CLIENTS}${props.match.params.id}`).then((res) => {
+    Api.clients.get(props.match.params.id).then((res) => {
       setClient(res.data);
     });
   }, [props]);

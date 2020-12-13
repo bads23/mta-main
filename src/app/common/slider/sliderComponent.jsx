@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
-import ApiGet from "../../config/axios";
-import URLS from "../../config/settings";
+import Api from "app/config/api";
 
 const Slide = ({ data }) => {
   return (
     <>
       <div className="slides">
-        <img src={`${URLS().IMGS}${data.Cover_Image}`} alt={data.Title} />
+        <img
+          src={`${process.env.REACT_APP_MEDIA_URL}${data.Cover_Image}`}
+          alt={data.Title}
+        />
         <div className="caption">
           <a href={`news/article/${data.id}`}>
             <h1>{data.Title}</h1>
@@ -27,7 +29,8 @@ const Slider = () => {
 
   useEffect(() => {
     // get news posts
-    ApiGet(`${URLS().NEWS}`).then((res) => {
+    // ApiGet(`${URLS().NEWS}`).then((res) => {
+    Api.news.get().then((res) => {
       setNews(res.data.reverse());
       setSlideData(res.data[0]);
     });
@@ -62,16 +65,7 @@ const Slider = () => {
       <span className="slideBtns" id="slideprev" onClick={slidePrev}></span>
       <span className="slideBtns" id="slidenext" onClick={slideNext}></span>
       <div id="sliderWrap">
-        {<Slide data={slideData} />}
-        {/* {news.length > 0 ? (
-          <>
-            {news.map((item) => (
-              <Slide data={item} />
-            ))}
-          </>
-        ) : (
-          <></>
-        )} */}
+        <Slide data={slideData} />
       </div>
     </div>
   );

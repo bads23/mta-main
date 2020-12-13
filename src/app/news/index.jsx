@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import ApiGet from "../config/axios";
-import URLS from "../config/settings";
+import Api from "app/config/api";
 import Header from "../common/header/header";
 import Footer from "../common/header/footer";
 import Article from "./article";
@@ -12,7 +11,10 @@ const Item = ({ news }) => {
     <>
       <div className="articleItem fl-btw fl-wrap mg-v-50" key={news.id}>
         <div className="articleItemImg">
-          <img src={`${URLS().IMGS}${news.Cover_Image}`} alt="" />
+          <img
+            src={`${process.env.REACT_APP_MEDIA_URL}${news.Cover_Image}`}
+            alt=""
+          />
         </div>
         <div className="articleItemInfo">
           <a href={`/news/article/${news.id}`}>
@@ -36,7 +38,7 @@ const Index = () => {
   const [news, setNews] = useState([]);
 
   const getNews = () => {
-    ApiGet(`${URLS().NEWS}`).then((res) => {
+    Api.news.get().then((res) => {
       setNews(res.data);
     });
   };

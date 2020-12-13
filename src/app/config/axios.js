@@ -1,71 +1,68 @@
-import axios from 'axios'
-import URLS from './settings'
+import axios from "axios";
 
-var JWT = require('jsonwebtoken')
+class Call {
+  baseUrl = process.env.REACT_APP_API_URL;
+  imgUrl = process.env.REACT_APP_MEDIA_URL;
 
-const ApiGet = url => {
+  constructor(endpoint) {
+    this.endpoint = `${this.baseUrl}${endpoint}`;
+  }
 
-  var tokens = localStorage.getItem('tokens')
-  var header = {}
-
-  const isTokenExpired = (token) => {
-    var decoded = JWT.decode(token)
-    if (decoded.exp < Date.now() / 1000) { // Checking if token is expired. N
-      ApiRefreshToken()
-      .then(res => {
-        var tokens = JSON.parse(localStorage.getItem('tokens'))
-        var new_token = {}
-        new_token.refresh = tokens.refresh
-        new_token.access = res.data.access
-        localStorage.setItem('tokens',JSON.stringify(new_token))
-      })
+  getHeaders = () => {
+    var tokens = localStorage.getItem("tokens");
+    if (tokens) {
+      tokens = JSON.parse(tokens);
+      var headers = {
+        Authorization: `Bearer ${tokens.access}`,
+      };
+    } else {
+      headers = {};
     }
-  }
+    return headers;
+  };
 
-  if (tokens) {
-    tokens = JSON.parse(tokens)
-    isTokenExpired(tokens.access)
-    header = {
-      Authorization: `Bearer ${tokens.access}`
-    }
-  }
+  get = async (params) => {
+    return await axios({
+      method: "get",
+      url: this.endpoint + `${params ? params : ""}`,
+      headers: this.getHeaders(),
+    });
+  };
 
-  const Get = async (url) => {
-    const response = await axios.get(url, { headers: header })
-    return response
-  }
-  return Get(url)
+  post = async (params) => {
+    return await axios({
+      method: "post",
+      url: this.endpoint,
+      data: params,
+      headers: this.getHeaders(),
+    });
+  };
+
+  put = async (id, params) => {
+    return await axios({
+      method: "put",
+      url: this.endpoint + id + "/",
+      data: params,
+      headers: this.getHeaders(),
+    });
+  };
+
+  delete = async (params) => {
+    return await axios({
+      method: "delete",
+      url: this.endpoint + `${params ? params : ""}`,
+      headers: this.getHeaders(),
+    });
+  };
 }
 
+export class Img extends Call {
+  baseUrl = "https://media.motiontalentafrica.co.ke/";
 
-export const ApiPost = (url, payload) => {
-  const Post = async (url, payload) => {
-    const response = await axios.post(url, payload)
-    return response
+  constructor(endpoint) {
+    super(endpoint);
+    this.endpoint = `${this.baseUrl}${endpoint}`;
   }
-  return Post(url, payload)
 }
 
-export const ApiPut = (url, payload) => {
-  const Put = async (url, payload) => {
-    const response = await axios.put(url, payload)
-    return response
-  }
-  return Put(url, payload)
-}
-
-
-export const ApiRefreshToken = () =>{
-  var tokens = localStorage.getItem('tokens')
-  tokens = JSON.parse(tokens)
-  var payload = {
-    "refresh": tokens.refresh
-  }
-  const Token = async () => {
-    const response = await axios.post(`${URLS().REFRESH}`, payload)
-    return response
-  }
-  return Token()
-}
-
-export default ApiGet
+export default Call;

@@ -41,7 +41,13 @@ const RightHeader = () => {
           <a href="/Contact-us">Contact Us</a>
         </span>
         <span className="playfair-links">
-          <a href="http://store.motiontalentafrica.co.ke" target="_blank" rel="noopener noreferrer">Shop</a>
+          <a
+            href="http://store.motiontalentafrica.co.ke"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Shop
+          </a>
         </span>
       </div>
       <hr />
@@ -50,19 +56,18 @@ const RightHeader = () => {
   );
 };
 
-const openMenu = () =>{
-  const menuBar =  document.getElementById('mobileMenuBar');
-  menuBar.style.display = 'block';
-}
+const openMenu = () => {
+  const menuBar = document.getElementById("mobileMenuBar");
+  menuBar.style.display = "block";
+};
 
-const closeMenu = () =>{
-  const menuBar =  document.getElementById('mobileMenuBar');
-  menuBar.style.display = 'none';
-}
+const closeMenu = () => {
+  const menuBar = document.getElementById("mobileMenuBar");
+  menuBar.style.display = "none";
+};
 
 const Mobile = () => {
-
-  return(
+  return (
     <>
       <span id="mobileMenu" onClick={openMenu}>
         <i className="fas fa-bars lg-text icon gold"></i>
@@ -70,7 +75,9 @@ const Mobile = () => {
 
       <div id="mobileMenuBar">
         <div id="menu-items">
-          <div className="pd-20"><h2 className="playfair-lg">Menu</h2></div>
+          <div className="pd-20">
+            <h2 className="playfair-lg">Menu</h2>
+          </div>
           <a href="/">
             <span>Home</span>
           </a>
@@ -95,7 +102,11 @@ const Mobile = () => {
           <a href="/contact-us">
             <span>Contact us</span>
           </a>
-          <a href="https://store.motiontalentafrica.co.ke" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://store.motiontalentafrica.co.ke"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <span>Shop</span>
           </a>
         </div>
@@ -104,8 +115,8 @@ const Mobile = () => {
         </span>
       </div>
     </>
-  )
-}
+  );
+};
 
 const Header = () => {
   return (
@@ -117,7 +128,7 @@ const Header = () => {
           <img src={Logo} alt="Logo" className="logo" />
         </a>
       </div>
-      <Mobile/>
+      <Mobile />
       <RightHeader />
     </div>
   );
