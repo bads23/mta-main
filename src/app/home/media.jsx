@@ -4,25 +4,35 @@ import _ from "underscore";
 import Api from "app/config/api";
 import AudioPlayer from "react-h5-audio-player";
 import "react-h5-audio-player/lib/styles.css";
+import vid from "app/common/assets/img/2test.mp4"
 
-// const Videos = () => {
-//   return (
-//     <>
-//       <div className="video-section">
-//         <h2 className="playfair-xlg black mg-v-20">Videos</h2>
-//         <div className="videoContainer">
-//           <iframe
-//             src={mediaLinks.youtube}
-//             title="videos"
-//             frameBorder="0"
-//             allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
-//             allowFullScreen
-//           ></iframe>
-//         </div>
-//       </div>
-//     </>
-//   );
-// };
+const Video = () => {
+
+  const closeVideoPlayer = () => {
+    let videoEl = document.getElementById("videoPlayer");
+    videoEl.style.display = "none";
+  }
+
+  return (
+    <>
+      <div className="video-section" id="videoPlayer" style={{display:"none"}}>
+        <div className="videoContainer">
+          <div className="videoInfo">
+            <p className="playfair-lg">Oliskia Wapi - 2 Testifayaz</p>
+            <p className="playfair-md" onClick={closeVideoPlayer}>
+              <i className="fas fa-times fa-2x"> </i>
+            {/* Close */}
+            </p>
+          </div>
+          <video controls>
+            <source src={vid} type="video/mp4" />
+            {/* <source src="movie.ogg" type="video/ogg" /> */}
+          </video>
+        </div>
+      </div>
+    </>
+  );
+};
 
 const Player = ({ song, playPrev, playNext }) => {
   return (
@@ -42,12 +52,12 @@ const Player = ({ song, playPrev, playNext }) => {
           showJumpControls={false}
           customAdditionalControls={[]}
           customVolumeControls={[]}
-          customIcons={{
-            play: <i className="fas fa-play" />,
-            pause: <i className="fas fa-pause" />,
-            next: <i className="fas fa-step-forward" />,
-            previous: <i className="fas fa-step-backward" />,
-          }}
+          // customIcons={{
+          //   play: <i className="fas fa-play fa-sm" />,
+          //   pause: <i className="fas fa-pause fa-sm" />,
+          //   next: <i className="fas fa-step-forward" />,
+          //   previous: <i className="fas fa-step-backward" />,
+          // }}
           onClickPrevious={() => playPrev(song.id)}
           onClickNext={() => playNext(song.id)}
         />
@@ -57,6 +67,12 @@ const Player = ({ song, playPrev, playNext }) => {
 };
 
 const Playlist = ({ music, song, setSong }) => {
+
+  const showVideoPlayer = () => {
+    let videoEl = document.getElementById("videoPlayer");
+    videoEl.style.display = "inline-block";
+  }
+
   return (
     <div className="playlist">
       <div className="list">
@@ -95,13 +111,17 @@ const Playlist = ({ music, song, setSong }) => {
                     <i className="fas fa-play" />
                   </span>
 
-                  {item.video !== null ? (
+                  {/* {item.video !== null ? (
                     <span>
                       <i className="fas fa-video" />
                     </span>
                   ) : (
                     ""
-                  )}
+                  )} */}
+
+                    <span onClick={() => showVideoPlayer()}>
+                      <i className="fas fa-video" />
+                    </span>
                 </div>
               </div>
             ))
@@ -183,7 +203,7 @@ const Music = () => {
 const Media = () => {
   return (
     <div className="full-section pd-50" id="media-wrapper">
-      {/* <Videos /> */}
+      <Video />
       <Music />
     </div>
   );
