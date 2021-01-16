@@ -25,7 +25,7 @@ const Player = ({ song, playPrev, playNext }) => {
           showJumpControls={false}
           customAdditionalControls={[]}
           customIcons={{
-            play: <i className="fas fa-play" />,
+            play: <i className="fas fa-play fs-sm" />,
             pause: <i className="fas fa-pause" />,
             next: <i className="fas fa-step-forward" />,
             previous: <i className="fas fa-step-backward" />,
@@ -61,6 +61,11 @@ const Player = ({ song, playPrev, playNext }) => {
 };
 
 const Playlist = ({ music, song, setSong }) => {
+  const showVideoPlayer = () => {
+    let videoEl = document.getElementById("videoPlayer");
+    videoEl.style.display = "inline-block";
+  };
+
   return (
     <div className="playlist" id="playlist">
       <div className="list">
@@ -99,13 +104,17 @@ const Playlist = ({ music, song, setSong }) => {
                     <i className="fas fa-play" />
                   </span>
 
-                  {item.video !== null ? (
+                  {/* {item.video !== null ? (
                     <span>
                       <i className="fas fa-video" />
                     </span>
                   ) : (
                     ""
-                  )}
+                  )} */}
+
+                  <span onClick={() => showVideoPlayer()}>
+                    <i className="fas fa-video" />
+                  </span>
                 </div>
               </div>
             ))
