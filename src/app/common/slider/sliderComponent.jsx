@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from "react-responsive-carousel";
 import Api from "app/config/api";
 
 const Slide = ({ data }) => {
@@ -24,48 +26,29 @@ const Slide = ({ data }) => {
 
 const Slider = () => {
   const [news, setNews] = useState([]);
-  const [slideData, setSlideData] = useState({});
-  const [currSlide, setCurrSlide] = useState(0);
-
+  
   useEffect(() => {
-    // get news posts
-    // ApiGet(`${URLS().NEWS}`).then((res) => {
     Api.news.get().then((res) => {
       setNews(res.data.reverse());
-      setSlideData(res.data[0]);
     });
 
     document.getElementById("header").style.position = "absolute";
   }, []);
 
-  const slideNext = () => {
-    var next = currSlide + 1;
-    if (next > news.length - 1) {
-      setSlideData(news[0]);
-      setCurrSlide(0);
-    } else {
-      setSlideData(news[next]);
-      setCurrSlide(next);
-    }
-  };
-
-  const slidePrev = () => {
-    var next = currSlide - 1;
-    if (next < 0) {
-      setSlideData(news[news.length - 1]);
-      setCurrSlide(news.length - 1);
-    } else {
-      setSlideData(news[next]);
-      setCurrSlide(next);
-    }
-  };
-
   return (
     <div className="slider hero-slider">
-      <span className="slideBtns" id="slideprev" onClick={slidePrev}></span>
-      <span className="slideBtns" id="slidenext" onClick={slideNext}></span>
       <div id="sliderWrap">
-        <Slide data={slideData} />
+        <Carousel
+          showArrows={true}
+          autoPlay={true}
+          infiniteLoop={true}
+          showStatus={false}
+          showThumbs={false}
+        >
+          {news.map((data) => (
+            <Slide data={data} />
+          ))}
+        </Carousel>
       </div>
     </div>
   );

@@ -1,47 +1,29 @@
 import React, { useState, useEffect } from "react";
-import Skeleton from "react-loading-skeleton";
 import _ from "underscore";
 import Api from "app/config/api";
 import AudioPlayer from "react-h5-audio-player";
 import "react-h5-audio-player/lib/styles.css";
 
-// const Videos = () => {
-//   return (
-//     <>
-//       <div className="video-section">
-//         <h2 className="playfair-xlg black mg-v-20">Videos</h2>
-//         <div className="videoContainer">
-//           <iframe
-//             src={mediaLinks.youtube}
-//             title="videos"
-//             frameBorder="0"
-//             allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
-//             allowFullScreen
-//           ></iframe>
-//         </div>
-//       </div>
-//     </>
-//   );
-// };
-
 const Player = ({ song, playPrev, playNext }) => {
+  const toggleList = () => {
+    var list = document.getElementById("playlist");
+    if (list.style.display === "none") {
+      list.style.display = "block";
+    } else {
+      list.style.display = "none";
+    }
+  };
+
   return (
     <div className="player">
-      <div className="thumbnail">
-        <img src={`${process.env.REACT_APP_MEDIA_URL}/${song.image}`} alt="" />
-      </div>
-      <div>
-        <p className="lato-m text-center">{`${song.name} - ${song.artist_name}`}</p>
-      </div>
       <div className="controls">
         <AudioPlayer
           autoPlay={false}
-          volume={0.2}
+          volume={0.3}
           src={`${process.env.REACT_APP_MEDIA_URL}/${song.audio}`}
           showSkipControls={true}
           showJumpControls={false}
           customAdditionalControls={[]}
-          customVolumeControls={[]}
           customIcons={{
             play: <i className="fas fa-play" />,
             pause: <i className="fas fa-pause" />,
@@ -52,13 +34,35 @@ const Player = ({ song, playPrev, playNext }) => {
           onClickNext={() => playNext(song.id)}
         />
       </div>
+      <div className="artwork">
+        <div className="thumbnail">
+          <img
+            src={`${process.env.REACT_APP_MEDIA_URL}/${song.image}`}
+            alt=""
+          />
+        </div>
+        <div className="details">
+          <p className="lato-m text-center  mg-h-10">
+            <span className="b">
+              {song.name === undefined ? "" : `${song.name}`}
+            </span>
+            <br />
+            <span className="lato-sm">
+              {song.artist_name === undefined ? "" : `${song.artist_name}`}
+            </span>
+          </p>
+        </div>
+        <div className="playlistBtn" onClick={toggleList}>
+          <i className="fas fa-list"></i>
+        </div>
+      </div>
     </div>
   );
 };
 
 const Playlist = ({ music, song, setSong }) => {
   return (
-    <div className="playlist">
+    <div className="playlist" id="playlist">
       <div className="list">
         {music.length > 0
           ? music.map((item) => (
@@ -111,7 +115,76 @@ const Playlist = ({ music, song, setSong }) => {
   );
 };
 
-const Music = () => {
+// const Music = () => {
+//   const [music, setMusic] = useState([]);
+//   const [song, setSong] = useState({});
+
+//   const playNext = (id) => {
+//     var index = _.findLastIndex(music, { id: id });
+
+//     if (index + 1 >= music.length) {
+//       setSong(music[0]);
+//     } else {
+//       setSong(music[index + 1]);
+//     }
+//   };
+//   const playPrev = (id) => {
+//     var index = _.findLastIndex(music, { id: id });
+
+//     if (index - 1 < 0) {
+//       // setSong(music[music.length]);
+//     } else {
+//       setSong(music[index - 1]);
+//     }
+//   };
+
+//   useEffect(() => {
+//     // axios.get(`${URLS().MUSIC}`);
+//     Api.music.get().then((res) => {
+//       let songs = [];
+//       _.each(res.data, (obj) => {
+//         if (obj.audio !== null) {
+//           songs.push(obj);
+//         }
+//       });
+//       setMusic(songs);
+//       setSong(res.data[0]);
+//     });
+//   }, []);
+
+//   return (
+//     <>
+//       <div className="music-section">
+//         <h2 className="playfair-xlg">Music</h2>
+//         <div className="musicContainer">
+//           {music.length <= 0 ? (
+//             <div className="fl-btw">
+//               <div>
+//                 <Skeleton width={250} height={250} />
+//                 <Skeleton />
+//               </div>
+//               <div>
+//                 <Skeleton width={800} height={50} count={5} />
+//               </div>
+//             </div>
+//           ) : (
+//             <>
+//               <Player
+//                 song={song}
+//                 setSong={setSong}
+//                 playPrev={playPrev}
+//                 playNext={playNext}
+//               />
+//               <Playlist song={song} setSong={setSong} music={music} />
+//             </>
+//           )}
+//         </div>
+//       </div>
+//     </>
+//   );
+// };
+
+const FooterPlayer = () => {
   const [music, setMusic] = useState([]);
   const [song, setSong] = useState({});
 
@@ -150,43 +223,21 @@ const Music = () => {
 
   return (
     <>
-      <div className="music-section">
-        <h2 className="playfair-xlg">Music</h2>
-        <div className="musicContainer">
-          {music.length <= 0 ? (
-            <div className="fl-btw">
-              <div>
-                <Skeleton width={250} height={250} />
-                <Skeleton />
-              </div>
-              <div>
-                <Skeleton width={800} height={50} count={5} />
-              </div>
-            </div>
-          ) : (
-            <>
-              <Player
-                song={song}
-                setSong={setSong}
-                playPrev={playPrev}
-                playNext={playNext}
-              />
-              <Playlist song={song} setSong={setSong} music={music} />
-            </>
-          )}
-        </div>
+      <div id="footerPlayer">
+        <Player
+          song={song}
+          setSong={setSong}
+          playPrev={playPrev}
+          playNext={playNext}
+        />
+        <Playlist song={song} setSong={setSong} music={music} />
       </div>
     </>
   );
 };
 
 const Media = () => {
-  return (
-    <div className="full-section pd-50" id="media-wrapper">
-      {/* <Videos /> */}
-      <Music />
-    </div>
-  );
+  return <FooterPlayer />;
 };
 
 export default Media;
