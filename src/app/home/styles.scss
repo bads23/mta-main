@@ -36,18 +36,6 @@
     
 }
 
-
-@media(max-width: 767px){
-    .video-section, .music-section{
-        width: 100%;
-    }
-
-    .videoContainer, .musicContainer{
-        height: auto;
-    }
-}
-
-
 .store-div{
     background: $color-cream;
 }
@@ -104,31 +92,7 @@
             }
         }
     }
-    
-    // div:first-child{
-    //     width: 45%;
-    // }
-    
 }
-
-
-
-// Music Player Section
-
-// .rhap_main{
-//     @extend .lato-sm;
-//     font-size: 11px !important;
-// }
-
-// .rhap_progress-indicator{
-//     width: 15px !important;
-//     height: 15px !important;
-//     top: -5px !important;
-// }
-
-// .rhap_controls-section, .rhap_volume-controls {
-//     display: block !important;
-// }
 
 
 // Footer Player Section
@@ -153,6 +117,9 @@
                     button{
                         margin-top: -10px;
                     }
+                }
+                .rhap_additional-controls{
+                    flex: none;
                 }
                 .rhap_play-pause-button {
                     height:35px;
@@ -194,20 +161,26 @@
             display: flex;
             flex-direction: row;
             align-items: center;
-            .thumbnail{
-                width: 40px;
-                height: 40px;
-                overflow: hidden;
-                text-align: center;margin:0px 10px;
-                img{
+            justify-content: space-between;
+            .artworkWrap{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                .thumbnail{
                     width: 40px;
                     height: 40px;
+                    overflow: hidden;
+                    text-align: center;margin:0px 10px;
+                    img{
+                        width: 40px;
+                        height: 40px;
+                    }
                 }
-            }
-            .details{
-                p{
-                    margin: 0px;
-                    height: 30px;
+                .details{
+                    p{
+                        margin: 0px;
+                        height: 30px;
+                    }
                 }
             }
             .playlistBtn{
@@ -255,3 +228,47 @@
     }
 }
 
+@media(max-width: 768px){
+    #footerPlayer{
+        height: 120px;
+        .player{
+            flex-direction: column-reverse;
+            height: 120px;
+            align-items: center;
+            .artwork{
+                width: 90%;
+            }
+            .controls{
+                width: 90%;
+            }
+        }
+        .playlist{
+            width: 90%;
+            bottom: 120px;
+        }
+    }
+}
+
+@media(max-width: 600px){
+    #footerPlayer{
+        height: 150px;
+        .player{
+            height: 150px;
+        }
+        .controls{
+            .rhap_container{
+                .rhap_main{
+                    flex-direction: column;
+                    .rhap_controls-section{
+                        width: 90%;
+                        margin: 0px auto;
+                    }
+                }
+            }
+        }
+        .playlist{
+            width: 90%;
+            bottom: 150px;
+        }
+    }
+}

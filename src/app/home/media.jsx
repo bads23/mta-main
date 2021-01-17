@@ -35,22 +35,24 @@ const Player = ({ song, playPrev, playNext }) => {
         />
       </div>
       <div className="artwork">
-        <div className="thumbnail">
-          <img
-            src={`${process.env.REACT_APP_MEDIA_URL}/${song.image}`}
-            alt=""
-          />
-        </div>
-        <div className="details">
-          <p className="lato-m text-center  mg-h-10">
-            <span className="b">
-              {song.name === undefined ? "" : `${song.name}`}
-            </span>
-            <br />
-            <span className="lato-sm">
-              {song.artist_name === undefined ? "" : `${song.artist_name}`}
-            </span>
-          </p>
+        <div className="artworkWrap">
+          <div className="thumbnail">
+            <img
+              src={`${process.env.REACT_APP_MEDIA_URL}/${song.image}`}
+              alt=""
+            />
+          </div>
+          <div className="details">
+            <p className="lato-m text-center  mg-h-10">
+              <span className="b">
+                {song.name === undefined ? "" : `${song.name}`}
+              </span>
+              <br />
+              <span className="lato-sm">
+                {song.artist_name === undefined ? "" : `${song.artist_name}`}
+              </span>
+            </p>
+          </div>
         </div>
         <div className="playlistBtn" onClick={toggleList}>
           <i className="fas fa-list"></i>
