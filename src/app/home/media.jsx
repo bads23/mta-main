@@ -55,7 +55,7 @@ const Player = ({ song, playPrev, playNext }) => {
           </div>
         </div>
         <div className="playlistBtn" onClick={toggleList}>
-          <i className="fas fa-list"></i>
+          <i className="fas fa-angle-up"></i>
         </div>
       </div>
     </div>
@@ -126,75 +126,6 @@ const Playlist = ({ music, song, setSong }) => {
   );
 };
 
-// const Music = () => {
-//   const [music, setMusic] = useState([]);
-//   const [song, setSong] = useState({});
-
-//   const playNext = (id) => {
-//     var index = _.findLastIndex(music, { id: id });
-
-//     if (index + 1 >= music.length) {
-//       setSong(music[0]);
-//     } else {
-//       setSong(music[index + 1]);
-//     }
-//   };
-//   const playPrev = (id) => {
-//     var index = _.findLastIndex(music, { id: id });
-
-//     if (index - 1 < 0) {
-//       // setSong(music[music.length]);
-//     } else {
-//       setSong(music[index - 1]);
-//     }
-//   };
-
-//   useEffect(() => {
-//     // axios.get(`${URLS().MUSIC}`);
-//     Api.music.get().then((res) => {
-//       let songs = [];
-//       _.each(res.data, (obj) => {
-//         if (obj.audio !== null) {
-//           songs.push(obj);
-//         }
-//       });
-//       setMusic(songs);
-//       setSong(res.data[0]);
-//     });
-//   }, []);
-
-//   return (
-//     <>
-//       <div className="music-section">
-//         <h2 className="playfair-xlg">Music</h2>
-//         <div className="musicContainer">
-//           {music.length <= 0 ? (
-//             <div className="fl-btw">
-//               <div>
-//                 <Skeleton width={250} height={250} />
-//                 <Skeleton />
-//               </div>
-//               <div>
-//                 <Skeleton width={800} height={50} count={5} />
-//               </div>
-//             </div>
-//           ) : (
-//             <>
-//               <Player
-//                 song={song}
-//                 setSong={setSong}
-//                 playPrev={playPrev}
-//                 playNext={playNext}
-//               />
-//               <Playlist song={song} setSong={setSong} music={music} />
-//             </>
-//           )}
-//         </div>
-//       </div>
-//     </>
-//   );
-// };
-
 const FooterPlayer = () => {
   const [music, setMusic] = useState([]);
   const [song, setSong] = useState({});
@@ -219,8 +150,7 @@ const FooterPlayer = () => {
   };
 
   useEffect(() => {
-    // axios.get(`${URLS().MUSIC}`);
-    Api.music.get().then((res) => {
+    Api.music.get("?ordering=-id").then((res) => {
       let songs = [];
       _.each(res.data, (obj) => {
         if (obj.audio !== null) {
@@ -228,7 +158,7 @@ const FooterPlayer = () => {
         }
       });
       setMusic(songs);
-      setSong(res.data[0]);
+      setSong(songs[0]);
     });
   }, []);
 

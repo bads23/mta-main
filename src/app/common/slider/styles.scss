@@ -84,6 +84,9 @@
 }
 
 @media screen and (max-width: 600px) {
+  .slider {
+    height: calc(100vh - 150px);
+  }
   .slides {
     width: 100%;
     img {

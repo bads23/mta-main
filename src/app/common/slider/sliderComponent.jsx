@@ -26,7 +26,7 @@ const Slide = ({ data }) => {
 
 const Slider = () => {
   const [news, setNews] = useState([]);
-  
+
   useEffect(() => {
     Api.news.get().then((res) => {
       setNews(res.data.reverse());
@@ -44,7 +44,7 @@ const Slider = () => {
           infiniteLoop={true}
           showStatus={false}
           showThumbs={false}
-        >
+          swipeable={false}>
           {news.map((data) => (
             <Slide data={data} />
           ))}
