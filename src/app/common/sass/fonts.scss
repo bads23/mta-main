@@ -1,193 +1,175 @@
 // Font Families
-.lato{
-  font-family: 'Lato', sans-serif;
+.lato {
+  font-family: "Lato", sans-serif;
 }
 
-.playfair{
-  font-family: 'Playfair Display', serif;
+.playfair {
+  font-family: "Playfair Display", serif;
   text-rendering: optimizeLegibility !important;
   -webkit-font-smoothing: antialiased !important;
 }
 
-.fontawesome{
+.fontawesome {
   font-family: "Font Awesome 5 Free";
   font-weight: bold;
 }
 
-
 // Font Styles
-.mb{
+.mb {
   font-weight: 500;
 }
 
-.b{
+.b {
   font-weight: 700;
 }
 
-.xb{
- font-weight: 900;
+.xb {
+  font-weight: 900;
 }
 
-.l{
+.l {
   font-weight: 200;
 }
-.i{
+.i {
   font-style: italic;
 }
 
 // Font Sizes
 
-.xsm-text{
+.xsm-text {
   font-size: 12px;
 }
 
-.sm-text{
+.sm-text {
   font-size: 13px;
 }
 
-.medium-text{
+.medium-text {
   font-size: 14px;
 }
 
-.lg-text{
+.lg-text {
   font-size: 20px;
 }
 
-.xlg-text{
+.xlg-text {
   font-size: 28px;
 }
 
-.xxlg-text{
+.xxlg-text {
   font-size: 38px;
 }
 
 // Main Classes
-.lato-xsm{
-  @extend .lato, .xsm-text ;
- }
-
- .lato-xsm-i{
-   @extend .lato-xsm, .i ;
- }
-
- .lato-xsm-mb{
-   @extend .lato-xsm, .mb ;
- }
-
-.lato-xsm-b{
-  @extend .lato-xsm, .b ;
+.lato-xsm {
+  @extend .lato, .xsm-text;
 }
 
-.lato-sm{
- @extend .lato, .sm-text ;
+.lato-xsm-i {
+  @extend .lato-xsm, .i;
 }
 
-.lato-sm-b{
-  @extend .lato, .sm-text, .b ;
+.lato-xsm-mb {
+  @extend .lato-xsm, .mb;
 }
 
-.lato-m{
-  @extend .lato, .medium-text ;
+.lato-xsm-b {
+  @extend .lato-xsm, .b;
 }
 
-.lato-lg{
-  @extend .lato, .lg-text ;
+.lato-sm {
+  @extend .lato, .sm-text;
 }
 
-.lato-xlg{
-  @extend .lato, .xlg-text ;
+.lato-sm-b {
+  @extend .lato, .sm-text, .b;
 }
 
-.playfair-xsm{
-  @extend .playfair, .xsm-text ;
+.lato-m {
+  @extend .lato, .medium-text;
 }
 
-.playfair-sm{
-  @extend .playfair, .sm-text ;
+.lato-lg {
+  @extend .lato, .lg-text;
 }
 
-.playfair-m{
-  @extend .playfair, .medium-text ;
+.lato-xlg {
+  @extend .lato, .xlg-text;
 }
 
-.playfair-lg{
-  @extend .playfair, .lg-text ;
+.playfair-xsm {
+  @extend .playfair, .xsm-text;
 }
 
-.playfair-xlg{
-  @extend .playfair, .xlg-text ;
+.playfair-sm {
+  @extend .playfair, .sm-text;
 }
 
-.playfair-xxlg{
-  @extend .playfair, .xxlg-text ;
+.playfair-m {
+  @extend .playfair, .medium-text;
 }
 
-.text-links{
-  @extend .lato-m, .b ;
+.playfair-lg {
+  @extend .playfair, .lg-text;
+}
+
+.playfair-xlg {
+  @extend .playfair, .xlg-text;
+}
+
+.playfair-xxlg {
+  @extend .playfair, .xxlg-text;
+}
+
+.text-links {
+  @extend .lato-m, .b;
   color: $color-gold;
   margin: 5px;
-  &:hover{
+  &:hover {
     text-decoration: underline;
   }
-  
-}.playfair-links{
-  @extend .playfair-m ;
-  color: $color-gold ;
+}
+.playfair-links {
+  @extend .playfair-m;
+  color: $color-gold;
   margin: 5px;
   // text-shadow: .5px .5px .5px rgba(0,0,0,.4);
-  &:hover{
+  &:hover {
     text-decoration: underline;
   }
 }
 
-.long-text{
-  @extend .lato ;
+.long-text {
+  @extend .lato;
   font-size: 16px;
   line-height: 30px;
 }
 
-
-.icon{
-  &:hover{
+.icon {
+  &:hover {
     color: $color-gold;
     cursor: pointer;
   }
 }
 
 // Fontawesome icons
-.fas{
-  @extend .medium-text ;
+.fas {
+  @extend .medium-text;
 }
 
-
-
-.align-right{
+.align-right {
   text-align: right;
 }
 
-.align-left{
+.align-left {
   text-align: left;
 }
 
-.align-center{
+.align-center {
   text-align: center;
 }
 
-
-.section-header{
+.section-header {
   @extend .playfair-lg, .mg-b-10;
   text-align: center;
-}
-
-
-ul{
-  list-style-type: none;
-  padding-left: 0px;
-  li{
-    &::before{
-      content: "\f0da";
-      @extend .fontawesome ;
-      margin-right: 10px;
-    }
-  }
 }

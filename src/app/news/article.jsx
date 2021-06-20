@@ -36,11 +36,11 @@ const Article = ({ props }) => {
           />
         </div>
 
-        <h1 className="playfair-xlg">{article.Title}</h1>
+        <h1 className="playfair-xlg align-center">{article.Title}</h1>
 
-        <span className="dateSpan block playfair-m "></span>
+        <span className="dateSpan block playfair-m align-center"></span>
 
-        <span className="subtitleSpan lato-sm i block mg-v-20">
+        <span className="subtitleSpan lato-sm i block mg-v-20 align-center">
           {article.Subtitle}
         </span>
 
@@ -59,24 +59,21 @@ const Article = ({ props }) => {
               <a
                 target="_blank"
                 rel="noopener noreferrer"
-                href="https://twitter.com/mtalent_africa/"
-              >
+                href="https://twitter.com/mtalent_africa/">
                 <i className="fab fa-twitter"></i>
               </a>
 
               <a
                 target="_blank"
                 rel="noopener noreferrer"
-                href="https://www.facebook.com/motiontalentafrica/"
-              >
+                href="https://www.facebook.com/motiontalentafrica/">
                 <i className="fab fa-facebook-square"></i>
               </a>
 
               <a
                 target="_blank"
                 rel="noopener noreferrer"
-                href="https://www.instagram.com/motiontalentafrica/"
-              >
+                href="https://www.instagram.com/motiontalentafrica/">
                 <i className="fab fa-instagram"></i>
               </a>
             </p>
